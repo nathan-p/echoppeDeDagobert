@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20 janv. 2015, 11:52:25
+    Author     : hakje
+*/
+
+
+#RegisterFormGrid {    
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: #00dddd;
+  
+    height: 100%;
+}
+
+#LoginFormGrid {       
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dd00dd;
+    padding-bottom: 1%;
+}
+
+.row-xs-height {
+    display:table-row;
+    
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+.col-xs-height {
+    display:table-cell;
+    float:none;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dddddd;
+
+}
