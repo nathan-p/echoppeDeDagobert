@@ -5,7 +5,7 @@
     margin-bottom: 20px;
     margin-right: auto;
     margin-left: auto;
-    
+
 }
 
 body {
@@ -18,7 +18,7 @@ body {
     color: black;
     margin-right: auto;
     margin-left: auto;
-    background-color:white;
+    background-color:white;	
     
     
 }
@@ -53,4 +53,19 @@ body {
 .tableau-panier th {
     border: 1px solid black;
     padding: 0.5em; 
+}
+
+#RegisterFormGrid {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dfdddd;
+    width: 45%;
+    margin-right: 5%;
+}
+
+#LoginFormGrid {    
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dfdddd;
+    width: 45%;
 }
