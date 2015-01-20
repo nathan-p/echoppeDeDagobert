@@ -5,7 +5,6 @@
     margin-bottom: 20px;
     margin-right: auto;
     margin-left: auto;
-
 }
 
 body {
@@ -18,9 +17,7 @@ body {
     color: black;
     margin-right: auto;
     margin-left: auto;
-    background-color:white;	
-
-
+    background-color:white;
 }
 
 .content {
@@ -50,15 +47,15 @@ body {
     border: 1px solid black;
     max-width: 10em;
     max-height: 20em;
-    background-color: #ebebeb; 
+    background-color: #ebebeb;
 }
 
 .tableau-panier td {
     border: 1px solid black;
-    padding: 1em; 
+    padding: 1em;
 }
 
 .tableau-panier th {
     border: 1px solid black;
-    padding: 0.5em; 
+    padding: 0.5em;
 }
