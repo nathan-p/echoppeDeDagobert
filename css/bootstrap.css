@@ -3326,21 +3326,18 @@ fieldset[disabled] .btn-link:focus {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
-  border-radius: 6px;
 }
 .btn-sm,
 .btn-group-sm > .btn {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
 }
 .btn-xs,
 .btn-group-xs > .btn {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
 }
 .btn-block {
   display: block;
@@ -3724,7 +3721,7 @@ tbody.collapse.in {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
-  border-radius: 6px;
+  /*border-radius: 6px;*/
 }
 select.input-group-lg > .form-control,
 select.input-group-lg > .input-group-addon,
@@ -3747,7 +3744,7 @@ select[multiple].input-group-lg > .input-group-btn > .btn {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
+  /*border-radius: 3px;*/
 }
 select.input-group-sm > .form-control,
 select.input-group-sm > .input-group-addon,
