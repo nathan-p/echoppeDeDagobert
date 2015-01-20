@@ -5,7 +5,11 @@
 	margin-bottom: 20px;
 	margin-right: auto;
 	margin-left: auto;
+	
+}
 
+body {
+	background-color: #efeeee;
 }
 
 .mainDiv {
@@ -14,7 +18,7 @@
 	color: white;
 	margin-right: auto;
 	margin-left: auto;
-	background-color:black;
+	background-color:white;
 
 	
 }
