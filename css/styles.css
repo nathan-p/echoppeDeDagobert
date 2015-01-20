@@ -114,3 +114,57 @@ footer {
 	border-color:black;
 
 }
+
+
+body {
+    background-color: #efeeee;
+}
+
+.mainDiv {
+    width: 80%;
+    height: 100%;
+    color: black;
+    margin-right: auto;
+    margin-left: auto;
+    background-color:white;
+}
+
+.content {
+    padding: 1em;
+}
+
+.content-heading {
+    background-color: lightgray;
+}
+
+.menu-panier {
+    background-color: lightgray;
+}
+
+.menu-panier li {
+    display: inline-block;
+    padding-right: 2em;
+}
+
+.tableau-panier {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tableau-panier img {
+    border: 1px solid black;
+    max-width: 10em;
+    max-height: 20em;
+    background-color: #ebebeb;
+}
+
+.tableau-panier td {
+    border: 1px solid black;
+    padding: 1em;
+}
+
+.tableau-panier th {
+    border: 1px solid black;
+    padding: 0.5em;
+}
