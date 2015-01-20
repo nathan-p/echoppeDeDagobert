@@ -10,20 +10,11 @@ and open the template in the editor.
 
 
 #RegisterFormGrid {    
-
-    border-style: solid;
-    border-width: 1px;
-    border-color: #00dddd;
-  
-    height: 100%;
+     height: 100%;
 }
 
 #LoginFormGrid {       
-
-    border-style: solid;
-    border-width: 1px;
-    border-color: #dd00dd;
-    padding-bottom: 1%;
+   padding-bottom: 1%;
 }
 
 .row-xs-height {
