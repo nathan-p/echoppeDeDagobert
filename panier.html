@@ -27,6 +27,7 @@ and open the template in the editor.
                     Résumé du panier
                 </h1>
                 
+                <!-- Menu du panier -->
                 <ul class="menu-panier">
                     <li>Sommaire</li>
                     <li>Login</li>
@@ -35,6 +36,7 @@ and open the template in the editor.
                     <li>Paiement</li>
                 </ul>
                 
+                <!-- Tableau du panier -->
                 <table class="tableau-panier">
                     <thead>
                         <tr>
@@ -47,13 +49,36 @@ and open the template in the editor.
                             <th></th>
                         </tr>
                     </thead>
-                    <tfoot></tfoot>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" rowspan="3"></td>
+                            <td colspan="3">Total des produits</td>
+                            <td colspan="2">1€</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Frais de livraison</td>
+                            <td colspan="2">0€</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">TOTAL</td>
+                            <td colspan="2">2€</td>
+                        </tr>
+                    </tfoot>
                     <tbody>
                         <tr>
-                            <td>Photo</td>
+                            <td><img src="img/mr_ventouze.png"/></td>
                             <td>Lorem ipsum dolor sit amet</td>
                             <td>En Stock</td>
+                            <td>500€</td>
                             <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Photo 2</td>
+                            <td>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</td>
+                            <td>Epuisé</td>
+                            <td>-10€</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -62,7 +87,8 @@ and open the template in the editor.
                 </table>
                 
                 <div class="navigation-panier">
-                    
+                    <button>Retour</button>
+                    <button style="float: right">Suivant</button>
                 </div>
             </div>
         </div>
