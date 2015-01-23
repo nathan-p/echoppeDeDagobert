@@ -12,9 +12,10 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link rel="stylesheet" type="text/css" href="css/stylesLogin.css">
+        <link rel="stylesheet" type="text/css" href="css/stylesLogin.css">        
+        <script type='text/javascript' src='javascript/fonctionsFormulaire.js'></script>
     </head>
-    <body>
+    <body>        
         <div class="banner">
             <div class="row">
                 <div class="col-md-3 col-md-offset-9">
@@ -143,17 +144,17 @@ and open the template in the editor.
                                     <hr>
                                 </div>
                                 <div>
-                                    <p>
+                                    <p id="toto">
                                         Please enter your email address to create an account.
                                     </p>
                                 </div>
                                 <div class="RegisterForm">
-                                    <form>
+                                    <form name="registerForm">
                                         <div class="form-group">
                                             <label for="InputEmail">Email address</label>
-                                            <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
+                                            <input name="email" type="email" class="form-control" id="InputEmail" placeholder="Enter email">
                                         </div>          
-                                        <button type="submit" class="btn btn-default">Create an account</button>
+                                        <button type="submit" onclick="checkForm(document.registerForm)" class="btn btn-default">Create an account</button>
                                     </form>
                                 </div>
                             </div>
@@ -167,7 +168,7 @@ and open the template in the editor.
                                     <hr>
                                 </div>
                                 <div class="LoginForm">
-                                    <form>
+                                    <form name="loginForm">
                                         <div class="form-group">
                                             <label for="InputEmail">Email address</label>
                                             <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
@@ -179,7 +180,7 @@ and open the template in the editor.
                                         <div>
                                             <a href=""> Forgot your password? </a>
                                         </div>
-                                        <button type="submit" class="btn btn-default">Submit</button>
+                                        <button type="submit" onclick="checkForm()" class="btn btn-default">Submit</button>
                                     </form>
                                 </div>
                             </div>
