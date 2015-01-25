@@ -168,3 +168,13 @@ body {
     border: 1px solid black;
     padding: 0.5em;
 }
+
+.title {
+	color:black;
+	text-decoration: none;
+}
+
+.title:hover {
+	text-decoration: none;
+	color : black;
+}

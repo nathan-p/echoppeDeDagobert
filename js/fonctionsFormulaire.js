@@ -1,10 +1,20 @@
+ 
+ $( document ).ready( function() {
+  
+
+});
+$.variables = { 
+    color : 0 
+}; 
+
+//formulaire function
  function checkSignIn(){
     var inputMail = $("#inputEmail").val();
 
     if(checkMail(inputMail)) {
         $("#divRegister").children().remove();
 
-        $( "#divRegister" ).append( "<form action='http://127.0.0.1/Master/Echoppe_Dagobert/loginPage.html?' id='signInForm' name='loginForm' method='get'><div class='form-group'><label for='prenom'>Prénom</label><input type='text' id='surname' name='prenom' class='form-control' placeholder='Entrez votre prénom'></div><div class='form-group'><label for='nom'>Nom</label><input type='text' id='name' name='nom' class='form-control'  placeholder='Entrez votre nom'></div><button type='button' onclick='checkForm();' class='btn btn-default'>Envoyer</button></form> " );
+        $( "#divRegister" ).append( "<form action='./loginPage.html?' id='signInForm' name='loginForm' method='get'><div class='form-group'><label for='prenom'>Prénom</label><input type='text' id='surname' name='prenom' class='form-control' placeholder='Entrez votre prénom'></div><div class='form-group'><label for='nom'>Nom</label><input type='text' id='name' name='nom' class='form-control'  placeholder='Entrez votre nom'></div><button type='button' onclick='checkForm();' class='btn btn-default'>Envoyer</button></form> " );
 
         $('#consignesMail').html("Vous pouvez maintenant entrer votre nom et prénom pour compléter votre inscription.");
     } 
@@ -30,38 +40,41 @@ function checkForm() {
 }
 
 
+
+
 function checkMail(field) {
     re = new RegExp('[^@]+@.*\.[^\.]+');
     if (!field.match(re)) {
-        //window.alert("Votre adresse mail n'a pas une forme valide");
         return false;
     } else {
-        //addFieldOnRegister();
         return true;
     }
 }
 
-
-function checkName(field) {
-    if( field.val() == '' || field.val() == undefined  ) {
-        return false;
+function changeColor() {
+    switch($.variables.color) {
+        case 0: // rouge
+            $('body').css( "background-color",'#D7CCC8' ); break;
+        case 1: // orange
+            $('body').css( "background-color",'#B0BEC5' ); break;
+        case 2: // jaune
+            $('body').css( "background-color",'#efeeee' ); break;
+        default:
+            $('body').css( "background-color",'#efeeee' ); break;
     }
-    return true;
+    $.variables.color = ($.variables.color +1 ) % 3 ;
 }
 
-function addFieldOnRegister() {    
-    var nomUtilisateur = "Nom utilisateur";
-    var newLabel = document.createElement('p');
-    var nodeNomUtilisateur = document.createTextNode(nomUtilisateur);
-    newLabel.appendChild(nodeNomUtilisateur);
+function changeLanguage() {
+    
 
-    var inputNomUtilisateur = "InputNomUtilisateur";
-    var newInput = document.createElement('input');
-    newInput.className = "form-control";
-    //alert(document.registerForm.name);
-    document.registerForm.appendChild(newLabel);
-//    var toto = document.getElementsByName(document.forms[0].name);
-//    alert(document.getElementById('toto'));
-//    document.getElementByName('registerForm').appendChild(newLabel);
-//    document.getElementByName('registerForm').appendChild(newInput);
+    if($("#language").text() == "Français") {
+        $("#language").text("English");
+    } 
+    else {
+        $("#language").text("Français");
+    }
+    
 }
+
+
