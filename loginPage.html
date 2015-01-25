@@ -15,7 +15,7 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/stylesLogin.css">
         <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
-        <script type='text/javascript' src='javascript/fonctionsFormulaire.js'></script>
+        <script type='text/javascript' src='js/fonctionsFormulaire.js'></script>
 
     </head>
     <body>        
@@ -142,36 +142,26 @@ and open the template in the editor.
                             <div id="RegisterFormGrid"> 
                                 <div class="TitleForm">
                                     <h2>
-                                        Create an account
+                                        Créer un compte
                                     </h2>                    
                                     <hr>
                                 </div>
                                 <div>
-                                    <p id="toto">
-                                        Please enter your email address to create an account.
+                                    <p id="consignesMail">
+                                        Merci d'entrer votre adresse mail pour vous inscrire
                                     </p>
                                 </div>
-                                <script type="text/javascript">
-                                        function cli(){
-                                            
-                                            $( "#divTest" ).append( "<p>Test</p>" );
-
-                                        };
-                                        
-                                        
-                                </script>
                                 <div class="RegisterForm">
-                                    <form name="registerForm">
-                                        <div class="form-group" id="divTest">
-                                            <label for="InputEmail">Email address</label>
-                                            <input name="email" type="email" class="form-control" id="InputEmail" placeholder="Enter email">
-                                        </div>          
-                                        <button type="submit" onclick="checkForm(document.registerForm)" class="btn btn-default">Create an account</button>
-                                    </form>
+                                    <div class="form-group" id="divRegister">
+                                        <label for="inputEmail">Email address</label>
+                                        <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Entrez votre email">
+                                        <br>
+                                        <button type="submit" onclick="checkSignIn();" class="btn btn-default">Create an account</button>
+                                    </div>          
+                                    
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-default" >Create an account</button>
                         <div class="col-md-5 col-md-offset-2"> 
                             <div  id="LoginFormGrid">
                                 <div class="TitleForm">
@@ -192,7 +182,7 @@ and open the template in the editor.
                                         </div>
                                         <div>
                                             <a href=""> Forgot your password? </a>
-                                        </div>
+                                        </div><br>
                                         <button type="submit" onclick="checkForm()" class="btn btn-default">Submit</button>
                                     </form>
                                 </div>
