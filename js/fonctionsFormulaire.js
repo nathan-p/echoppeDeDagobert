@@ -1,8 +1,4 @@
  
- $( document ).ready( function() {
-  
-
-});
 $.variables = { 
     color : 0 
 }; 
@@ -66,8 +62,6 @@ function changeColor() {
 }
 
 function changeLanguage() {
-    
-
     if($("#language").text() == "Français") {
         $("#language").text("English");
     } 

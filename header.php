@@ -17,7 +17,7 @@
 	<div class="banner">
 		<div class="row">
 			<div class="col-md-4 col-md-offset-8">
-				<a href="./loginPage.html" style="margin-right:20px;">Contactez nous</a>
+				<a href="./loginPage.php" style="margin-right:20px;">Contactez nous</a>
 				<a href="javascript:changeLanguage();" id="language" style="margin-right:20px;">English</a>
 				<a href="javascript:changeColor();" style="margin-right:20px;">Personaliser</a>
 			</div>
@@ -26,13 +26,11 @@
 
 	<div class="main-div">
 
-
-
 		<div class="row header">
 
 
 			<div class="col-md-2 ">
-				<a href="./index.html" class="title"><h1> 
+				<a href="./index.php" class="title"><h1> 
 					<p><b>Echoppe</b></p>	 
 					<p><b>Dagobert</b></p>
 				</h1></a>
@@ -51,7 +49,7 @@
 
 			
 			<div class="col-md-3 col-md-offset-1 header-center">
-				<button type="button" class="btn btn-lg btn-default" onclick="location.href='panier.html'" >
+				<button type="button" class="btn btn-lg btn-default" onclick="location.href='panier.php'" >
 					<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
 					&nbsp;&nbsp;&nbsp;Panier (vide)&nbsp;&nbsp;&nbsp;
 
@@ -124,109 +122,3 @@
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
-
-		
-		<div id="slider" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#slider" data-slide-to="0" class="active"></li>
-				<li data-target="#slider" data-slide-to="1"></li>
-			</ol>
-
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="img/slider_img_1.jpg" alt="Alix le beau gosse !">
-					<div class="carousel-caption">
-						<h3>FREE SHIPPING</h3>
-						<p>Alix le beau gosse ! </p>
-					</div>
-				</div>
-				<div class="item">
-					<img src="img/slider_img_2.jpg" alt="Aymeric la belle gosse !">
-					<div class="carousel-caption">
-						<h3>FINAL SALE <p>-70% </p></h3>
-						<p>Aymeric la belle gosse ! </p>
-					</div>
-				</div>
-				
-			</div>
-
-			<!-- Controls -->
-			<a class="left carousel-control" href="#slider" role="button" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="right carousel-control" href="#slider" role="button" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
-
-		<div id="categories">
-			<h3>Catégories du moment</h3>
-			<div class="row">
-				<div class="col-md-3 categorie-block">
-					<div class="row">
-						<div class="col-md-6"><p>Item 1</p></div>
-						<div class="col-md-6"><p>Item 2</p></div>
-
-					</div>
-				</div>
-				<div class="col-md-3 col-md-offset-1 categorie-block">
-
-				</div>
-				<div class="col-md-3 col-md-offset-1 categorie-block">
-					
-				</div>
-			</div>
-
-		</div>
-		
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	</div>
-	<footer>
-		
-		<div class="row">
-			<div class="col-md-3">
-				<h1> 
-					<p><b>Echoppe</b></p>	 
-					<p><b>Dagobert</b></p>
-				</h1>
-				<small>© 2015 ECOMMERCE SOFTWARE BY IPIC Industries™</small>
-			</div>
-			<div class="col-md-3">
-				<h3 class="footer-categories">INFORMATIONS</h3>
-				<ul class="list-unstyled">
-					<li><a href="">Informations</a></li>
-					<li><a href="">Foire aux questions</a></li>
-					<li><a href="">Conditions générales de vente</a></li>
-					<li><a href="">Contact</a></li>
-				</ul>
-
-
-			</div>
-			<div class="col-md-3">
-				<h3 class="footer-categories">MON COMPTE</h3>
-				<ul class="list-unstyled">
-					<li><a href="">Mon compte</a></li>
-					<li><a href="">Mon panier</a></li>
-					<li><a href="">Mes commandes</a></li>
-					<li><a href="">Modifier mon adresse</a></li>
-				</ul>
-			</div>
-			<div class="col-md-3">
-				<h3 class="footer-categories">NOUS SUIVRE</h3>
-				<ul class="list-unstyled">
-					<li><a href="">Facebook</a></li>
-					<li><a href="">Twitter</a></li>
-					<li><a href="">RSS</a></li>
-				</ul>
-				
-			</div>
-
-		</div>
-	</footer>
-
-</body>
-</html>
