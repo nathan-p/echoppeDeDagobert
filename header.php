@@ -74,17 +74,6 @@
 						</li>
 
 						<!-- MENU ITEM ARME -->
-						<li class="dropdown-inverse">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Armes & armures <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Armes</a></li>
-								<li><a href="#">Armures</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Instruments de torture</a></li>
-							</ul>
-						</li>
-
-						<!-- MENU ITEM ARME -->
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Armes <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
