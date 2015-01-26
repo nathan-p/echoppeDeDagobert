@@ -50,13 +50,13 @@ function checkMail(field) {
 function changeColor() {
     switch($.variables.color) {
         case 0: // rouge
-            $('body').css( "background-color",'#D7CCC8' ); break;
+            $('body').css( "background-color",'#8D6E63' ); break;
         case 1: // orange
-            $('body').css( "background-color",'#B0BEC5' ); break;
+            $('body').css( "background-color",'#A1887F' ); break;
         case 2: // jaune
-            $('body').css( "background-color",'#efeeee' ); break;
+            $('body').css( "background-color",'#795548' ); break;
         default:
-            $('body').css( "background-color",'#efeeee' ); break;
+            $('body').css( "background-color",'#795548' ); break;
     }
     $.variables.color = ($.variables.color +1 ) % 3 ;
 }
