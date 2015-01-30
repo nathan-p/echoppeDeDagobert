@@ -10,7 +10,6 @@ class Database {
       $account = "root";
       $password = "";
         try{ 
-          
             return new PDO('mysql:host=localhost;dbname=bd_echoppe', $account, $password);
         } catch (Exception $e){ 
 
