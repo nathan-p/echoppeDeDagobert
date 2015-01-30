@@ -1,4 +1,5 @@
 <?php 
+	session_start(); 
 	include_once("model/Database.php");
 
 	$mail = $_GET['mail'];
@@ -9,15 +10,13 @@
 	$user = Database::getOneData($req);
 
 	 if($user == true) {
-	 	session_start(); 
-		
-		$_SESSION['user'] = $user[0]; 
+
+		$_SESSION['connected'] = 1; 
 		
 	 	header('Location: ./index.php');
 	 } 
 	 else {
 		header('Location: ./loginPage.php?state=wrong');
 	 }
-
 
 ?>

@@ -1,13 +1,22 @@
 <?php 
-	session_start(); 
+	session_start();
+	$connected = 0;
 
-	if(isset($_SESSION['user']) ) {
-		$connected = true;
-	} else {
-		$connected = false;
+	var_dump($_SESSION);
+
+	if(isset($_SESSION['connected'])) {
+		if($_SESSION['connected'] == 0) {
+			$_SESSION['connected'] = 0;
+		} else {
+			$_SESSION['connected'] = 1;
+			$connected = 1;
+		}
+	}
+	else {
+		$_SESSION['connected'] = 0;
 	}
 
-	echo "ttttttttttt  ".$connected;
+	
  ?>
 
 
@@ -35,7 +44,7 @@
 
 				<?php 
 				if($connected) {
-					$_SESSION['user'] = NULL;
+					session_destroy();
 					echo '<a href="./index.php" style="margin-right:20px;">Déconnexion</a>';
 				} 
 				else {
