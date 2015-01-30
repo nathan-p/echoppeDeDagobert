@@ -1,9 +1,19 @@
-<?php include("header.php"); ?>
+<?php 
+    include("header.php"); 
+
+    if(isset($_GET["state"]) && $_GET["state"] == "wrong" ) {
+        $wrongConnection = false;
+    }
+    else {
+        $wrongConnection = true;
+    }
+
+?>
 
             <div class="mainDiv">
                 <div class="content">
                     <ol class="breadcrumb">
-                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./index.php">Home</a></li>
                         <li class="active">Authentication</li>
                     </ol>
                     <h1 class="TitleMainDiv">
@@ -43,18 +53,23 @@
                                     <hr>
                                 </div>
                                 <div class="LoginForm">
-                                    <form name="loginForm">
+                                    <form name="loginForm" action='./connect.php?'>
                                         <div class="form-group">
                                             <label for="InputEmail">Adresse mail</label>
-                                            <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
+                                            <input type="email" class="form-control" name="mail" id="InputEmail" placeholder="Enter email">
                                         </div>
                                         <div class="form-group">
                                             <label for="InputPassword">Mot de passe</label>
-                                            <input type="password" class="form-control" id="InputPassword" placeholder="Password">
+                                            <input type="password" class="form-control" name="password" id="InputPassword" placeholder="Password">
                                         </div>
+                                        
+                                        <?php 
+                                            if(!$wrongConnection) 
+                                                echo "<p style='color:red;'>Votre mot de passe ou mail est incorrect !</p>"; 
+                                        ?>
                                         <br>
                                         <!-- ENVOI BDD -->
-                                        <button type="submit" onclick="checkForm()" class="btn btn-default">Se connecter</button>
+                                        <button type="submit" class="btn btn-default">Se connecter</button>
                                     </form>
                                 </div>
                             </div>

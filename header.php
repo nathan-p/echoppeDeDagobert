@@ -1,3 +1,16 @@
+<?php 
+	session_start(); 
+
+	if(isset($_SESSION['user']) ) {
+		$connected = true;
+	} else {
+		$connected = false;
+	}
+
+	echo "ttttttttttt  ".$connected;
+ ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +30,19 @@
 	<div class="banner">
 		<div class="row">
 			<div class="col-md-4 col-md-offset-8">
-				<a href="./loginPage.php" style="margin-right:20px;">Contactez nous</a>
+				<a href="./contact.php" style="margin-right:20px;">Contactez-nous</a>
 				<a href="javascript:changeLanguage();" id="language" style="margin-right:20px;">English</a>
-				<a href="javascript:changeColor();" style="margin-right:20px;">Personaliser</a>
+
+				<?php 
+				if($connected) {
+					$_SESSION['user'] = NULL;
+					echo '<a href="./index.php" style="margin-right:20px;">Déconnexion</a>';
+				} 
+				else {
+					echo '<a href="./loginPage.php" style="margin-right:20px;">Connexion</a>';
+				}
+				?>
+				
 			</div>
 		</div>
 	</div>
