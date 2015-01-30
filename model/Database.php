@@ -7,10 +7,10 @@ class Database {
      * @return \PDO Une variable de connexion à la base de donnée
      */
     private static function connect(){ 
-      $account = "";
+      $account = "root";
       $password = "";
         try{ 
-            return new PDO('mysql:host=localhost;dbname=echoppeDagobert', $account, $password);
+            return new PDO('mysql:host=localhost;dbname=bd_echoppe', $account, $password);
         } catch (Exception $e){ 
             die('Erreur : ' . $e->getMessage()); 
         } 
