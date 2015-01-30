@@ -10,7 +10,10 @@ class Objet {
 	private $promotion;
 	private $urlImage;
 	private $SousCategorie_idCategorie;
-	
+
+	/**
+	 * @param array $donnees
+     */
 	public function __constructor(array $donnees) {
 
 		foreach ($donnees as $key => $value)
@@ -27,10 +30,12 @@ class Objet {
 		}
 	}
 
-	
+	/**
+	 * @param $id
+     */
 	public function setIdObjet($id) {
 		$id = (int) $id;
-		
+		// si la conversion échoue, $id = 0
 		if ($id > 0) {
 			$this->$idObjet = $id;
 		}
@@ -68,13 +73,19 @@ class Objet {
 		$this->SousCategorie_idCategorie = $SousCategorie_idCategorie;
 	}
 
-	
+
+	/**
+	 * @param $desc
+     */
 	public function setDescription($desc) {
 		$desc = (String) $desc;
 		
 		$this->$description = $desc;
 	}
-	
+
+	/**
+	 * @param $s nombre de stock restant
+     */
 	public function setStock($s) {
 		$s = (int) $s;
 		
@@ -82,7 +93,10 @@ class Objet {
 			$this->$stock = $s;
 		}
 	}
-	
+
+	/**
+	 * @param $p prix
+     */
 	public function setPrix($p) {
 		$p = (float) $p;
 		
@@ -90,8 +104,74 @@ class Objet {
 			$this->$prix = $p;
 		}
 	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getIdObjet()
+	{
+		return $this->idObjet;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getNom()
+	{
+		return $this->nom;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getDescription()
+	{
+		return $this->description;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getStock()
+	{
+		return $this->stock;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getPrix()
+	{
+		return $this->prix;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getPromotion()
+	{
+		return $this->promotion;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getUrlImage()
+	{
+		return $this->urlImage;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getSousCategorieIdCategorie()
+	{
+		return $this->SousCategorie_idCategorie;
+	}
 	
-	
+	public function getPrixReel() {
+		return $this->prix * (1-($this->promotion / 100));
+	}
 
 }
 	
