@@ -94,15 +94,12 @@ body {
 
 .categorie-block .button{
 	font-size: 20px;
-   top:80px;
+   	top:80px;
+   	width: auto;
 }
 
-.categorie-block:hover {
-/* -moz-box-shadow: 8px 2px 7px -3px #000000;
--webkit-box-shadow: 8px 2px 7px -3px #000000;
-box-shadow: 8px 2px 7px -3px #000000; */
-}
-.categorie-block p {
+
+.categorie-block p, .promotion-block p {
 	display: inline-block;
 	border-style: solid;
     border-width: 2px;
@@ -112,9 +109,45 @@ box-shadow: 8px 2px 7px -3px #000000; */
 	padding-left: 5px;
 	padding-right: 5px;
 	padding-right: auto;
-	width: auto;
 }
 
+#cat_robe {
+	background: url('../img/117-rotschwarz1.jpg');
+}
+
+#cat_arme {
+	background: url('../img/bm0116696706-wikingerschwert-torshov-1.jpg');
+}
+
+#cat_bijoux {
+	background: url('../img/lh-nc110-ohrhaenger-tigerauge.jpg');
+}
+
+
+.promotion-block {
+    background-color: #A1887F;
+	height: 350px;
+	padding-top: 20px;
+}
+
+
+.promotion-block .button{
+	font-size: 20px;
+   	top:270px;
+   	width: auto;
+}
+
+#promo_tunique {
+	background: url('../img/01510-bl09-wolltunika-lodin-rot-1.jpg');
+}
+
+#promo_bottine {
+	background: url('../img/comp__mg_1421.jpg');
+}
+
+#promo_chaise {
+	background: url('../img/bm1901010700-steckstuhl.jpg');
+}
 
 footer {
 	width:80%;
@@ -193,3 +226,6 @@ footer a {
 	text-decoration: none;
 	color : #795548;
 }
+
+
+

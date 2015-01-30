@@ -40,37 +40,19 @@
 <div id="categories">
 	<h3>Catégories du moment</h3>
 	<div class="row">
-		<div class="col-md-3 categorie-block">
-			<div class="row">
-				<div class="col-md-6 button"><a href=""><p>Aller voir</p></a></div>
+		<div class="col-md-3 categorie-block" id="cat_robe">
+			<div class="row" >
+				<div class="col-md-6 button"><center><a href="./costumes/costumeFemme.php"><p>Robes femmes</p></a></center></div>
 			</div>
 		</div>
-		<div class="col-md-3 col-md-offset-1 categorie-block">
+		<div class="col-md-3 col-md-offset-1 categorie-block" id="cat_arme">
 			<div class="row">
-				<div class="col-md-6 button"><a href=""><p>Aller voir</p></a></div>
+				<div class="col-md-6 button"><center><a href="./armes/armes.php"><p>Armes</p></a></center></div>
 			</div>
 		</div>
-		<div class="col-md-3 col-md-offset-1 categorie-block">
+		<div class="col-md-3 col-md-offset-1 categorie-block" id="cat_bijoux">
 			<div class="row">
-				<div class="col-md-6 button"><a href=""><p>Aller voir</p></a></div>
-			</div>
-		</div>
-	</div>
-	<br><br><br>
-	<div class="row">
-		<div class="col-md-3 categorie-block">
-			<div class="row">
-				<div class="col-md-6 button"><a href=""><p>Aller voir</p></a></div>
-			</div>
-		</div>
-		<div class="col-md-3 col-md-offset-1 categorie-block">
-			<div class="row">
-				<div class="col-md-6 button"><a href=""><p>Aller voir</p></a></div>
-			</div>
-		</div>
-		<div class="col-md-3 col-md-offset-1 categorie-block">
-			<div class="row">
-				<div class="col-md-6 button"><a href=""><p>Aller voir</p></a></div>
+				<div class="col-md-6 button"><center><a href="./bijoux/bijoux.php"><p>bijoux</p></a></center></div>
 			</div>
 		</div>
 	</div>
@@ -79,37 +61,19 @@
 <div id="promotion">
 	<h3>Promotions</h3>
 	<div class="row">
-		<div class="col-md-3 categorie-block">
+		<div class="col-md-3 promotion-block" id="promo_tunique">
 			<div class="row">
-				<div class="col-md-6 button"><a href=""><p>Aller voir</p></a></div>
+				<div class="col-md-6 button"><center><a href=""><p>Tunique Lodin</p></a></center></div>
 			</div>
 		</div>
-		<div class="col-md-3 col-md-offset-1 categorie-block">
+		<div class="col-md-3 col-md-offset-1 promotion-block" id="promo_bottine">
 			<div class="row">
-				<div class="col-md-6 button"><a href=""><p>Aller voir</p></a></div>
+				<div class="col-md-6 button"><center><a href=""><p>Bottines médiévales</p></a></center></div>
 			</div>
 		</div>
-		<div class="col-md-3 col-md-offset-1 categorie-block">
+		<div class="col-md-3 col-md-offset-1 promotion-block" id="promo_chaise">
 			<div class="row">
-				<div class="col-md-6 button"><a href=""><p>Aller voir</p></a></div>
-			</div>
-		</div>
-	</div>
-	<br><br><br>
-	<div class="row">
-		<div class="col-md-3 categorie-block">
-			<div class="row">
-				<div class="col-md-6 button"><a href=""><p>Aller voir</p></a></div>
-			</div>
-		</div>
-		<div class="col-md-3 col-md-offset-1 categorie-block">
-			<div class="row">
-				<div class="col-md-6 button"><a href=""><p>Aller voir</p></a></div>
-			</div>
-		</div>
-		<div class="col-md-3 col-md-offset-1 categorie-block">
-			<div class="row">
-				<div class="col-md-6 button"><a href=""><p>Aller voir</p></a></div>
+				<div class="col-md-6 button"><center><a href=""><p>Chaise haute</p></a></center></div>
 			</div>
 		</div>
 	</div>
