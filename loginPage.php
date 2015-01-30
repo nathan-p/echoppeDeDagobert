@@ -53,7 +53,7 @@
                                     <hr>
                                 </div>
                                 <div class="LoginForm">
-                                    <form name="loginForm" action='./connect.php?'>
+                                    <form name="loginForm" action='./connect.php'>
                                         <div class="form-group">
                                             <label for="InputEmail">Adresse mail</label>
                                             <input type="email" class="form-control" name="mail" id="InputEmail" placeholder="Enter email">
@@ -62,7 +62,7 @@
                                             <label for="InputPassword">Mot de passe</label>
                                             <input type="password" class="form-control" name="password" id="InputPassword" placeholder="Password">
                                         </div>
-                                        
+                                        <input type="text" style="display:none;" class="form-control" name="connect" value="true">
                                         <?php 
                                             if(!$wrongConnection) 
                                                 echo "<p style='color:red;'>Votre mot de passe ou mail est incorrect !</p>"; 
