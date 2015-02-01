@@ -2,8 +2,6 @@
     font-family: "UbuntuFont";
     src: url('../fonts/ubuntu.ttf');
 }
-
-
 .banner {
 	height: 10%;
 	width: 80%;
@@ -11,6 +9,10 @@
 	margin-top: 10px;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+h1,h2 {
+	margin-left: 5%;
 }
 
 .banner a {
@@ -34,6 +36,13 @@ body {
 	background-color:white;	
 }
 
+/*
+*********************************************************
+****************  HEADER   ******************************
+*********************************************************
+*/
+
+
 
 .header {
 	width: 100%;
@@ -47,6 +56,12 @@ body {
 	margin-bottom: auto;
 	margin-top: 4%;
 }
+
+/*
+*********************************************************
+****************  PAGE ACCUEIL **************************
+*********************************************************
+*/
 
 #slider {
 	top:100px;
@@ -94,7 +109,7 @@ body {
 
 .categorie-block .button{
 	font-size: 20px;
-   	top:80px;
+   	top:50px;
    	width: auto;
 }
 
@@ -133,7 +148,7 @@ body {
 
 .promotion-block .button{
 	font-size: 20px;
-   	top:270px;
+   	top:230px;
    	width: auto;
 }
 
@@ -148,6 +163,31 @@ body {
 #promo_chaise {
 	background: url('../img/bm1901010700-steckstuhl.jpg') no-repeat;
 }
+
+.price {
+	float: right;
+	margin-top: -8%;
+	margin-right: -5.5%;
+	background-color:#811512; 
+	width: 100px;
+	height: 50px;
+	color:white;
+	text-align: center;
+}
+
+
+.new-price {
+	font-size:22px;
+}
+
+
+
+/*
+*********************************************************
+****************  FOOTER   ******************************
+*********************************************************
+*/
+
 
 footer {
 	width:80%;
@@ -172,14 +212,12 @@ footer a:hover {
 }
 
 
-.mainDiv {
-    width: 80%;
-    height: 100%;
-    color: black;
-    margin-right: auto;
-    margin-left: auto;
-    background-color:white;
-}
+
+/*
+*********************************************************
+****************  PAGE PANIER****************************
+*********************************************************
+*/
 
 .content {
     padding: 1em;
@@ -232,4 +270,32 @@ footer a:hover {
 }
 
 
+/*
+*********************************************************
+****************  PAGE CONTACT **************************
+*********************************************************
+*/
 
+#contact {
+	margin-top:100px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.jumbotron {
+background: #358CCE;
+color: #FFF;
+border-radius: 0px;
+}
+.jumbotron-sm { padding-top: 24px;
+padding-bottom: 24px; }
+.jumbotron small {
+color: #FFF;
+}
+.h1 small {
+font-size: 24px;
+}
+
+.adress {
+	text-align: right;
+}

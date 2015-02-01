@@ -14,7 +14,7 @@
 					<li><a href="">Informations</a></li>
 					<li><a href="">Foire aux questions</a></li>
 					<li><a href="">Conditions générales de vente</a></li>
-					<li><a href="">Contact</a></li>
+					<li><a href="./contact.php">Contact</a></li>
 				</ul>
 
 

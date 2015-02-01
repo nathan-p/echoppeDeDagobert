@@ -1,20 +1,14 @@
 <?php 
 	session_start(); 
 	include_once("model/Database.php");
-	var_dump($_GET);
-	var_dump($_SESSION);
-
 	if(isset($_GET['connect'])) {
 		if($_GET['connect'] == "true" ) {
 			connect();
-			echo "GOOD";
 		}
 		else {
 			deconnect();
-			echo "BAD";
-		}
-		echo "OTHER";
 
+		}
 	} 
 
 	function connect() {

@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+
 	$connected = 0;
 	if(isset($_SESSION['connected'])) {
 		if($_SESSION['connected'] == 0) {

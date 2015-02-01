@@ -1,4 +1,7 @@
-<?php include("header.php"); ?>
+<?php 
+
+	include("./header.php"); 
+?>
 
 <div id="slider" class="carousel slide" data-ride="carousel">
 	<!-- Indicators -->
@@ -62,16 +65,28 @@
 	<h3>Promotions</h3>
 	<div class="row">
 		<div class="col-md-3 promotion-block" id="promo_tunique">
+			<div class="col-md-4 col-md-offset-8 price">
+				<del>54 euros</del>
+				<div class="new-price">29 €</div>	
+			</div>
 			<div class="row">
 				<div class="col-md-6 button"><center><a href=""><p>Tunique Lodin</p></a></center></div>
 			</div>
 		</div>
 		<div class="col-md-3 col-md-offset-1 promotion-block" id="promo_bottine">
+			<div class="col-md-4 col-md-offset-8 price">
+				<del>38 euros</del>
+				<div class="new-price">24 €</div>	
+			</div>
 			<div class="row">
 				<div class="col-md-6 button"><center><a href=""><p>Bottines médiévales</p></a></center></div>
 			</div>
 		</div>
 		<div class="col-md-3 col-md-offset-1 promotion-block" id="promo_chaise">
+			<div class="col-md-4 col-md-offset-8 price">
+				<del>19 euros</del>
+				<div class="new-price">13.9 €</div>	
+			</div>
 			<div class="row">
 				<div class="col-md-6 button"><center><a href=""><p>Chaise haute</p></a></center></div>
 			</div>
