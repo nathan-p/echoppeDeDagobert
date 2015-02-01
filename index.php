@@ -1,6 +1,17 @@
 <?php 
 
 	include("./header.php"); 
+
+
+	/*
+		LIEN UTILES
+
+		http://bootsnipp.com/
+		http://bootsnipp.com/snippets/featured/responsive-shopping-cart
+		http://bootsnipp.com/snippets/featured/product-page-for-online-shop
+
+	*/
+
 ?>
 
 <div id="slider" class="carousel slide" data-ride="carousel">
