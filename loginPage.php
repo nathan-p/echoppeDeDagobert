@@ -38,7 +38,6 @@ if (isset($_GET["state"]) && $_GET["state"] == "wrong") {
                             <br>
                             <button type="submit" onclick="checkMail();" class="btn btn-default">Créer un compte</button>
                         </div>          
-
                     </div>
                 </div>
             </div>

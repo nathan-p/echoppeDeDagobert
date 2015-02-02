@@ -22,7 +22,7 @@
 		 if($user == true) {
 
 			$_SESSION['connected'] = 1; 
-			
+			$_SESSION['mail'] = $mail;
 		 	header('Location: ./index.php');
 		 } 
 		 else {
