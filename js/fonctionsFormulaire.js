@@ -126,3 +126,11 @@ $(document).ready(function() {
 
 });
 
+
+
+
+function search() {
+    var search = $('#search_input').val();
+
+    window.location.href = './searchResult.php?search='+search;
+}

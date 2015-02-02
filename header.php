@@ -61,9 +61,9 @@
 
 			<div class="col-lg-6 header-center" >
 				<div class="input-group input-group-lg">
-					<input type="text" class="form-control" placeholder="Rechercher">
+					<input type="text" class="form-control" id="search_input" placeholder="Rechercher">
 					<span class="input-group-btn">
-						<button class="btn btn-lg btn-default" type="button">
+						<button class="btn btn-lg btn-default" type="button" onClick='search();'>
 							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 						</button>
 					</span>
