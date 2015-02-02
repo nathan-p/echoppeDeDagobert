@@ -12,6 +12,7 @@ class Database {
         try{ 
             return new PDO('mysql:host=localhost;dbname=bd_echoppe', $account, $password);
         } catch (Exception $e){ 
+
             die('Erreur : ' . $e->getMessage()); 
         } 
     } 
@@ -40,8 +41,7 @@ class Database {
         $reponse = $bdd->query($req);
         return $reponse;
     }
-    
-    
+ 
 }
 
 ?>

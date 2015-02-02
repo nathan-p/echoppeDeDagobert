@@ -1,10 +1,8 @@
-
 $.variables = {
-    color: 0,
-};
-
+    color: 0
+}
 //formulaire function
-function checkSignIn(mailValide, inputMail) {
+function checkSignIn(mailValide, inputMail){
     if (mailValide == 'true') {
         $("#divRegister").children().remove();
 
@@ -34,8 +32,6 @@ function checkSignIn(mailValide, inputMail) {
     }
 
 }
-;
-
 
 function checkForm() {
     $("#divRegister > .error").remove();
@@ -96,4 +92,37 @@ function changeLanguage() {
 
 }
 
+
+
+
+$(document).ready(function() {
+    var panels = $('.user-infos');
+    var panelsButton = $('.dropdown-user');
+    panels.hide();
+
+    //Click dropdown
+    panelsButton.click(function() {
+        //get data-for attribute
+        var dataFor = $(this).attr('data-for');
+        var idFor = $(dataFor);
+
+        //current button
+        var currentButton = $(this);
+        idFor.slideToggle(400, function() {
+            //Completed slidetoggle
+            if(idFor.is(':visible'))
+            {
+                currentButton.html('<i class="glyphicon glyphicon-triangle-top text-muted"></i>');
+            }
+            else
+            {
+                currentButton.html('<i class="glyphicon glyphicon-triangle-bottom text-muted"></i>');
+            }
+        })
+    });
+
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+});
 

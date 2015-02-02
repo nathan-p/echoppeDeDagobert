@@ -11,10 +11,9 @@
 			<div class="col-md-3">
 				<h3 class="footer-categories">INFORMATIONS</h3>
 				<ul class="list-unstyled">
-					<li><a href="">Informations</a></li>
-					<li><a href="">Foire aux questions</a></li>
-					<li><a href="">Conditions générales de vente</a></li>
-					<li><a href="">Contact</a></li>
+					<li><a href="FAQ.php">Foire aux questions</a></li>
+					<li><a href="conditionVente.php">Conditions générales de vente</a></li>
+					<li><a href="./contact.php">Contact</a></li>
 				</ul>
 
 
@@ -31,9 +30,8 @@
 			<div class="col-md-3">
 				<h3 class="footer-categories">NOUS SUIVRE</h3>
 				<ul class="list-unstyled">
-					<li><a href="">Facebook</a></li>
-					<li><a href="">Twitter</a></li>
-					<li><a href="">RSS</a></li>
+					<li><a href="https://www.facebook.com/">Facebook</a></li>
+					<li><a href="https://www.twitter.com/">Twitter</a></li>
 				</ul>
 				
 			</div>

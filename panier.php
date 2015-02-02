@@ -45,6 +45,10 @@
         <tbody>
             <tr>
                 <td><img src="img/mr_ventouze.png"/></td>
+				<?php include("model/Database.php");
+				$jambon = Database::getOneData("SELECT nom FROM objet WHERE idObjet = 1");
+				var_dump($jambon);
+				echo "<td>$jambon[nom]</td>"; ?>
                 <td>Lorem ipsum dolor sit amet</td>
                 <td>En Stock</td>
                 <td>500€</td>
