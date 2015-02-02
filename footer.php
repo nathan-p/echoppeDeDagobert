@@ -12,7 +12,7 @@
 				<h3 class="footer-categories">INFORMATIONS</h3>
 				<ul class="list-unstyled">
 					<li><a href="">Informations</a></li>
-					<li><a href="">Foire aux questions</a></li>
+					<li><a href="FAQ.php">Foire aux questions</a></li>
 					<li><a href="">Conditions générales de vente</a></li>
 					<li><a href="./contact.php">Contact</a></li>
 				</ul>
