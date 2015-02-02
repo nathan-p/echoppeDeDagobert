@@ -12,6 +12,10 @@
 ?>
 
 <div class="container" id="contact">
+    <ol class="breadcrumb">
+            <li><a href="./index.php">Home</a></li>
+            <li class="active">Contact</li>
+        </ol>
 	<h2>Contactez-nous !</h2>
 	<?php if($sended) echo '<div class="alert alert-success" style="margin-left:5%;" role="alert">Votre message à bien été envoyé !</div> ' ?>
 	<br>

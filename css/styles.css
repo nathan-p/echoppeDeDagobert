@@ -36,6 +36,10 @@ body {
 	background-color:white;	
 }
 
+.justify {
+	text-align: justify;
+}
+
 /*
 *********************************************************
 ****************  HEADER   ******************************
@@ -396,3 +400,7 @@ font-size: 24px;
 .table-user-information > tbody > tr > td {
     border-top: 0;
 }
+
+
+
+

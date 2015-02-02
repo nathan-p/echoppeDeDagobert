@@ -3,6 +3,10 @@
 
 <br><br><br><br>
 <div class="container">
+	<ol class="breadcrumb">
+            <li><a href="./index.php">Home</a></li>
+            <li class="active">Foire aux questions</li>
+        </ol>
 	<ul class="list-group col-md-10 col-md-offset-1">
 		<li class="list-group-item">
 			<h4>Question 1 ?</h4>

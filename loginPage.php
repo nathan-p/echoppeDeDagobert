@@ -9,7 +9,8 @@ else {
 }
 
 ?>
-<div class="mainDiv">
+<br>    
+<div style="margin-top:40px;">
     <div class="content">
         <ol class="breadcrumb">
             <li><a href="./index.php">Home</a></li>
