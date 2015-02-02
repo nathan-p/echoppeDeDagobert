@@ -1,4 +1,6 @@
-<?php include("header.php"); ?>
+<?php 
+    include("header.php");
+?>
 
             <div class="mainDiv">
                 <div class="content">
@@ -28,7 +30,7 @@
                                         <label for="inputEmail">Adresse mail</label>
                                         <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Entrez votre email">
                                         <br>
-                                        <button type="submit" onclick="checkSignIn();" class="btn btn-default">Créer un compte</button>
+                                        <button type="submit" onclick="checkMail();" class="btn btn-default">Créer un compte</button>
                                     </div>          
                                     
                                 </div>

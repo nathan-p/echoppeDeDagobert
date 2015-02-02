@@ -61,7 +61,7 @@ body {
 	width: 100%;
 	bottom:70px;
 }
-
+.navbar-wrapper {border: 1px solid purple;}
 #categories {
 	margin-top:150px;
 	margin-left: 7%;
