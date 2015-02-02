@@ -56,7 +56,7 @@
 	<div class="row">
 		<div class="col-md-3 categorie-block" id="cat_robe">
 			<div class="row" >
-				<div class="col-md-6 button"><center><a href="./costumes/costumeFemme.php"><p>Robes femmes</p></a></center></div>
+				<div class="col-md-6 button"><center><a href="./categorie?Alimentation.php"><p>BOUFFE</p></a></center></div>
 			</div>
 		</div>
 		<div class="col-md-3 col-md-offset-1 categorie-block" id="cat_arme">
