@@ -30,10 +30,8 @@
 <body>
 	<div class="banner">
 		<div class="row">
-			<div class="col-md-5 col-md-offset-7">
+			<div class="col-md-4 col-md-offset-8">
 				<a href="./contact.php" style="margin-right:20px;">Contactez-nous</a>
-				<a href="javascript:changeLanguage();" id="language" style="margin-right:20px;">English</a>
-
 				<?php 
 				if($connected) {
 					echo '<a href="./compte.php" style="margin-right:20px;">Mon compte</a>';

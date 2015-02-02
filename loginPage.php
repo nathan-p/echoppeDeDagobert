@@ -13,7 +13,7 @@ else {
 <div style="margin-top:40px;">
     <div class="content">
         <ol class="breadcrumb">
-            <li><a href="./index.php">Home</a></li>
+            <li><a href="./index.php">Accueil</a></li>
             <li class="active">Authentication</li>
         </ol>
         <h1 class="TitleMainDiv">

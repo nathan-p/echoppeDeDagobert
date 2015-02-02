@@ -13,7 +13,7 @@
 
 <div class="container" id="contact">
     <ol class="breadcrumb">
-            <li><a href="./index.php">Home</a></li>
+            <li><a href="./index.php">Accueil</a></li>
             <li class="active">Contact</li>
         </ol>
 	<h2>Contactez-nous !</h2>

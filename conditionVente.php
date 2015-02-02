@@ -3,7 +3,7 @@
 <br><br><br><br>
 <div class="container">
 <ol class="breadcrumb">
-            <li><a href="./index.php">Home</a></li>
+            <li><a href="./index.php">Accueil</a></li>
             <li class="active">Conditions générales de vente</li>
         </ol>
 <div class="row">
