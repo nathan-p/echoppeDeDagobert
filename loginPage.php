@@ -1,13 +1,11 @@
-<?php 
-include("header.php"); 
+<?php
+include("header.php");
 
-if(isset($_GET["state"]) && $_GET["state"] == "wrong" ) {
+if (isset($_GET["state"]) && $_GET["state"] == "wrong") {
     $wrongConnection = false;
-}
-else {
+} else {
     $wrongConnection = true;
 }
-
 ?>
 <br>    
 <div style="margin-top:40px;">
@@ -38,7 +36,7 @@ else {
                             <label for="inputEmail">Adresse mail</label>
                             <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Entrez votre email">
                             <br>
-                            <button type="submit" onclick="checkSignIn();" class="btn btn-default">Créer un compte</button>
+                            <button type="submit" onclick="checkMail();" class="btn btn-default">Créer un compte</button>
                         </div>          
 
                     </div>
@@ -63,10 +61,10 @@ else {
                                 <input type="password" class="form-control" name="password" id="InputPassword" placeholder="Password">
                             </div>
                             <input type="text" style="display:none;" class="form-control" name="connect" value="true">
-                            <?php 
-                            if(!$wrongConnection) 
-                                echo "<p style='color:red;'>Votre mot de passe ou mail est incorrect !</p>"; 
-                            ?>
+<?php
+if (!$wrongConnection)
+    echo "<p style='color:red;'>Votre mot de passe ou mail est incorrect !</p>";
+?>
                             <br>
                             <!-- ENVOI BDD -->
                             <button type="submit" class="btn btn-default">Se connecter</button>

@@ -1,36 +1,46 @@
- 
-$.variables = { 
-    color : 0 
-}; 
-
+$.variables = {
+    color: 0
+}
 //formulaire function
- function checkSignIn(){
-    var inputMail = $("#inputEmail").val();
-
-    if(checkMail(inputMail)) {
+function checkSignIn(mailValide, inputMail){
+    if (mailValide == 'true') {
         $("#divRegister").children().remove();
 
-        $( "#divRegister" ).append( "<form action='./loginPage.php?' id='signInForm' name='loginForm' method='get'><div class='form-group'><label for='prenom'>Prénom</label><input type='text' id='surname' name='prenom' class='form-control' placeholder='Entrez votre prénom'></div><div class='form-group'><label for='nom'>Nom</label><input type='text' id='name' name='nom' class='form-control'  placeholder='Entrez votre nom'></div><button type='button' onclick='checkForm();' class='btn btn-default'>Envoyer</button></form> " );
+        $("#divRegister").append("<form action='./createUser.php?' id='signInForm' name='loginForm' method='get'>\n\
+                                        <div class='form-group'>\n\
+                                            <input type='hidden' name='email' id='mail' value='" + inputMail + "'/>\n\
+                                            <label for='prenom'>Prénom</label><input type='text' id='surname' name='prenom' class='form-control' placeholder='Entrez votre prénom'>\n\
+                                        </div>\n\
+                                        <div class='form-group'>\n\
+                                            <label for='nom'>Nom</label><input type='text' id='name' name='nom' class='form-control'  placeholder='Entrez votre nom'>\n\
+                                        </div>\n\
+                                        <div class='form-group'>\n\
+                                            <label for='motDePasse'>Mot de Passe</label><input type='text' id='motDePasse' name='motDePasse' class='form-control'  placeholder='Mot de passe'>\n\
+                                        </div>\n\
+                                        <button type='button' onclick='checkForm();' class='btn btn-default'>Envoyer</button></form> ");
 
         $('#consignesMail').html("Vous pouvez maintenant entrer votre nom et prénom pour compléter votre inscription.");
-    } 
+    }
     else {
-        $( "#divRegister > #error" ).remove();
-        $( "#divRegister" ).append("<div id='error'><p style='color:red'>Mail incorrect. Veuillez le ressaisir</p></div>");
+        if (mailValide == 'Mail Invalide') {
+            $("#divRegister > #error").remove();
+            $("#divRegister").append("<div id='error'><p style='color:red'>Mail incorrect. Veuillez le ressaisir</p></div>");
+        } else {
+            $("#divRegister > #error").remove();
+            $("#divRegister").append("<div id='error'><p style='color:red'>Mail déjà enregistré. Utilisez votre mot de passe pour vous connecter.</p></div>");
+        }
     }
 
-};
+}
 
+function checkForm() {
+    $("#divRegister > .error").remove();
 
-function checkForm() { 
-    $( "#divRegister > .error" ).remove();
-
-    if( $("#surname").val() == '' || $("#surname").val() == undefined ||
-
-        $("#name").val() == '' || $("#name").val() == undefined  ) {
-        $( "#divRegister" ).append("<p class='error' style='color:red'><br>Veuillez saisir correctement vos informations</p>");
-    } 
-    else {  
+    if ($("#surname").val() == '' || $("#surname").val() == undefined ||
+            $("#name").val() == '' || $("#name").val() == undefined) {
+        $("#divRegister").append("<p class='error' style='color:red'><br>Veuillez saisir correctement vos informations</p>");
+    }
+    else {
         $('#signInForm').submit();
     }
 }
@@ -38,37 +48,48 @@ function checkForm() {
 
 
 
-function checkMail(field) {
+function checkMail() {
+    var mailInput = $("#inputEmail").val();
     re = new RegExp('[^@]+@.*\.[^\.]+');
-    if (!field.match(re)) {
-        return false;
+    if (!mailInput.match(re)) {
+        checkSignIn('Mail Invalide', mailInput);
     } else {
-        return true;
+        $.ajax({
+            type: "GET",
+            url: "checkMail.php",
+            data: {mail: mailInput}
+        }).done(function (isOk) {
+            checkSignIn(isOk, mailInput);
+        });
     }
 }
 
 function changeColor() {
-    switch($.variables.color) {
+    switch ($.variables.color) {
         case 0: // rouge
-            $('body').css( "background-color",'#8D6E63' ); break;
+            $('body').css("background-color", '#8D6E63');
+            break;
         case 1: // orange
-            $('body').css( "background-color",'#A1887F' ); break;
+            $('body').css("background-color", '#A1887F');
+            break;
         case 2: // jaune
-            $('body').css( "background-color",'#795548' ); break;
+            $('body').css("background-color", '#795548');
+            break;
         default:
-            $('body').css( "background-color",'#795548' ); break;
+            $('body').css("background-color", '#795548');
+            break;
     }
-    $.variables.color = ($.variables.color +1 ) % 3 ;
+    $.variables.color = ($.variables.color + 1) % 3;
 }
 
 function changeLanguage() {
-    if($("#language").text() == "Français") {
+    if ($("#language").text() == "Français") {
         $("#language").text("English");
-    } 
+    }
     else {
         $("#language").text("Français");
     }
-    
+
 }
 
 
