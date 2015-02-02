@@ -6,8 +6,8 @@ $mail = $_GET['mail'];
 $bdd = new Database();
 $donnee = $bdd->getOneData('SELECT Count(*) FROM `utilisateur` WHERE mail = ' . '\'' . $mail . '\';');
 if ($donnee[0] != "0") {
-    echo "false";
+    echo 'false';
 } else {
-    echo "true";
+    echo 'true';
 }
 ?>

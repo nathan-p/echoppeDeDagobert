@@ -1,16 +1,11 @@
 
 $.variables = {
     color: 0,
-    mail: "",
-    isOk: "false"
 };
 
 //formulaire function
 function checkSignIn(mailValide, inputMail) {
-//    var inputMail = $("#inputEmail").val();    
-//    alert(mailValide);
-    if (mailValide == "true") {
-        //var mail = inputMMail;
+    if (mailValide == 'true') {
         $("#divRegister").children().remove();
 
         $("#divRegister").append("<form action='./createUser.php?' id='signInForm' name='loginForm' method='get'>\n\
@@ -29,8 +24,13 @@ function checkSignIn(mailValide, inputMail) {
         $('#consignesMail').html("Vous pouvez maintenant entrer votre nom et prénom pour compléter votre inscription.");
     }
     else {
-        $("#divRegister > #error").remove();
-        $("#divRegister").append("<div id='error'><p style='color:red'>Mail incorrect. Veuillez le ressaisir</p></div>");
+        if (mailValide == 'Mail Invalide') {
+            $("#divRegister > #error").remove();
+            $("#divRegister").append("<div id='error'><p style='color:red'>Mail incorrect. Veuillez le ressaisir</p></div>");
+        } else {
+            $("#divRegister > #error").remove();
+            $("#divRegister").append("<div id='error'><p style='color:red'>Mail déjà enregistré. Utilisez votre mot de passe pour vous connecter.</p></div>");
+        }
     }
 
 }
@@ -53,26 +53,18 @@ function checkForm() {
 
 
 function checkMail() {
-    var field = $("#inputEmail").val();
+    var mailInput = $("#inputEmail").val();
     re = new RegExp('[^@]+@.*\.[^\.]+');
-    if (!field.match(re)) {
-        return false;
+    if (!mailInput.match(re)) {
+        checkSignIn('Mail Invalide', mailInput);
     } else {
         $.ajax({
             type: "GET",
             url: "checkMail.php",
-            data: {mail: field}
+            data: {mail: mailInput}
         }).done(function (isOk) {
-//            alert(isOk);
-            if (isOk == "true") {
-                $.variables.mail = field;
-            }
-            //$.variables.isOk = isOk;
-            checkSignIn(isOk, field);
-            //init isOk
+            checkSignIn(isOk, mailInput);
         });
-
-//        return ($.variables.isOk == "true");
     }
 }
 
