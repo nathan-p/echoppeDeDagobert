@@ -6,20 +6,19 @@
  */
 
 include("./header.php");
-
-$objManager = new ObjetManager();
-$objets = $objManager.getObjets($_GET['categorie']);
-$html = '<ul class="menu-panier">';
-
+include("./model/ObjetManager.php");
+include("./model/Objet.php");
+$objets = ObjetManager::getObjets("Alimentation");
+$html = '<ol class="menu-panier">';
 foreach ($objets as $objet) {
-    $html = $html
-        .'<li>'.$objet->getNom()
-        .'<br>'.$objet->getDescription()
-        .'<br><a href="./objet?'.$objet->getIdObjet().'"> click me bitch</a>'
-        .'</li>';
-
+    $html = $html.'<li><ul>'
+        .'<li>'.$objet->getNom().'</li>'
+        .'<li>'.$objet->getDescription().'</li>'
+        .'<li><a href="./objet.php?id='.$objet->getIdObjet().'"> click me bitch</a></li>'
+        .'</ul></li>';
 }
-$html = $html.'</ul>';
+
+$html = $html.'</ol>';
 
 echo $html;
 

@@ -1,15 +1,17 @@
 <?php
 
-include_once './Database.php';
+include_once './model/Database.php';
 
 class ObjetManager {
+
+
 
     /**
      * Retourne l'objet correspondant à l'identifiant passé en paramètre.
      * @param type $id Identifiant de l'objet à récupérer.
      * @return \Objet Objet correspondant à l'identifiant donné.
      */
-    public function getObjet($id) {
+    public static function getObjet($id) {
         $req = 'SELECT *'
                 . 'FROM objet'
                 . 'WHERE idObjet="' . $id . '";';
@@ -23,16 +25,19 @@ class ObjetManager {
      * @param type $categoryName Catégorie dans laquelle récupérer les objets.
      * @return \Objet Tableau contenant les objets récupérés.
      */
-    public function getObjets($categoryName) {
-        $request = 'SELECT o.idObjet, o.nom, o.description, o.stock, o.prix, o.promotions, o.urlImage, o.SousCategorie_idCategorie'
-                . 'FROM objet o, categorie c'
-                . 'WHERE c.idCategorie = o.SousCategorie_idCategorie'
-                . 'AND c.nom = "' . $categoryName . '";';
+    public static function getObjets($categoryName) {
+        $request = 'SELECT o.idObjet, o.nom, o.description, o.stock, o.prix, o.promotions, o.urlImage, o.SousCategorie_idCategorie '
+                . 'FROM objet o, categorie c '
+                . 'WHERE c.idCategorie = o.SousCategorie_idCategorie '
+                . 'AND c.nom = "Alimentation"';
+
         $result = Database::getAllData($request);
 
         $objets = array();
-        while ($ligne = mysql_fetch_array($result)) {
-            $objet = new Objet($ligne);
+        foreach ($result as $key => $value) {
+            //var_dump($value);
+            $objet = new Objet;
+            $objet->hydrate($value);
             // Ajoute le nouvel objet au tableau
             $objets[] = $objet;
         }
