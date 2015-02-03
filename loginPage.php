@@ -60,10 +60,10 @@ if (isset($_GET["state"]) && $_GET["state"] == "wrong") {
                                 <input type="password" class="form-control" name="password" id="InputPassword" placeholder="Password">
                             </div>
                             <input type="text" style="display:none;" class="form-control" name="connect" value="true">
-<?php
-if (!$wrongConnection)
-    echo "<p style='color:red;'>Votre mot de passe ou mail est incorrect !</p>";
-?>
+                            <?php
+                            if (!$wrongConnection)
+                                echo "<p style='color:red;'>Votre mot de passe ou mail est incorrect !</p>";
+                            ?>
                             <br>
                             <!-- ENVOI BDD -->
                             <button type="submit" class="btn btn-default">Se connecter</button>

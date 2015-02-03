@@ -1,14 +1,18 @@
 <?php
 include("./header.php");
+include("./myAccountFunctions.php");
 
 $mail = $_SESSION['mail'];
-$name = '';
-$surname = '';
-$streetNumber = '';
-$streetName = '';
-$postalCode = '';
-$cityName = '';
-$country = '';
+$id = getId($mail);
+$donnee = getAdress($id);
+
+$name = $donnee['nomDestinataire'];
+$surname = $donnee['prenomDestinataire'];
+$streetName = $donnee['nomRue'];
+$postalCode = $donnee['codePostal'];
+$cityName = $donnee['ville'];
+$country = $donnee['pays'];
+
 //Interoger bd pour demander nom, nb d'adresse, l'adresse, les factures etc...
 ?>
 
@@ -35,10 +39,9 @@ $country = '';
                     <br>
                     <br>
                     <div class="col-md-11 col-md-offset-1">
-
-                        <form class="form-horizontal" role="form">
+                        <form class="form-horizontal" action='./updateAdress.php' id='editAdressForm' method='post' role="form">
                             <fieldset>
-
+                                <!-- Créer le formulaire avec les bon champs et modifier le sauvegarder pour pointer vers php-->
                                 <!-- Form Name -->
                                 <legend>
                                     Addresse de livraison 
@@ -52,42 +55,42 @@ $country = '';
 
                                 <!-- Text input-->
                                 <div class="form-group">
-
+                                    <input type='hidden' name='idUtilisateur' id='idUtilisateur' value='<?php echo $id ?>'/>
                                     <div class="col-sm-6">
-                                        <input type="text" placeholder="Nom" class="form-control">
+                                        <input type="text" name='nomDestinataire' placeholder="Nom" value=<?php echo '\'' . $name . '\''?> class="form-control">
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <input type="text" placeholder="Prénom" class="form-control">
+                                        <input type="text" name='prenomDestinataire' placeholder="Prénom" value=<?php echo '\'' . $surname . '\''?>class="form-control">
                                     </div>
                                 </div>
 
                                 <!-- Text input-->
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <input type="text" placeholder="Addresse" class="form-control">
+                                        <input type="text" name='nomRue' placeholder="Addresse" value=<?php echo '\'' . $streetName . '\''?> class="form-control">
                                     </div>
                                 </div>
                                 <!-- Text input-->
                                 <div class="form-group">
                                     <div class="col-sm-4">
-                                        <input type="text" placeholder="CodePostal" class="form-control">
+                                        <input type="text" name='codePostal' placeholder="CodePostal" value=<?php echo '\'' . $postalCode . '\''?> class="form-control">
                                     </div>
                                     <div class="col-sm-8">
-                                        <input type="text" placeholder="Ville" class="form-control">
+                                        <input type="text" name='ville' placeholder="Ville" value=<?php echo '\'' . $cityName . '\''?> class="form-control">
                                     </div>
                                 </div>
                                 <!-- Text input-->
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <input type="text" placeholder="Pays" class="form-control">
+                                        <input type="text" name='pays' placeholder="Pays" value=<?php echo '\'' . $country . '\''?> class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
                                         <div class="pull-right">
-                                            <button type="submit" class="btn btn-default">Annuler</button>
-                                            <button type="submit" class="btn btn-primary">Sauvegarder</button>
+                                            <button type="button" onClick='cancelEditAdresse();' class="btn btn-default">Annuler</button>
+                                            <button type="button" onClick='editAdresse();' class="btn btn-primary">Sauvegarder</button>
                                         </div>
                                     </div>
                                 </div>

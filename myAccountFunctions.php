@@ -5,38 +5,56 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php
-
-include("./model/Database.php");
+include_once("./model/Database.php");
 
 //$mail = $_SESSION['mail'];
-$mail = 'jeanluc.hak@gmail.com';
-
-
-getAdress(1);
 
 function getId($mail) {
     $request = 'SELECT `idUtilisateur` FROM `utilisateur` WHERE `mail`= \'' . $mail . '\';';
     $bdd = new Database();
     $donnee = $bdd->getOneData($request);
-    
-    echo $donnee['idUtilisateur'];    
+
+    return $donnee['idUtilisateur'];
 }
 
 function getAdress($id) {
     $request = 'Select * FROM `adresse` WHERE `Utilisateur_idUtilisateur` =' . $id . ';';
     $bdd = new Database();
     $donnee = $bdd->getOneData($request);
-    
-    var_dump($donnee);
-    $nomDestinataire = $donnee['nomDestinataire'];
-    $prenomDestinataire = $donnee['prenomDestinataire'];
-    $nomRue = $donnee['nomRue'];
-    $codePostal = $donnee['codePostal'];
-    $ville = $donnee['ville'];
-    $pays = $donnee['pays'];
+
+    return $donnee;
+}
+
+function setAdress() {
+    $idUser = $_POST['idUtilisateur'];
+    $name = $_POST['nomDestinataire'];
+    $surname = $_POST['prenomDestinataire'];
+    $streetName = $_POST['nomRue'];
+    $postalCode = $_POST['codePostal'];
+    $cityName = $_POST['ville'];
+    $country = $_POST['pays'];
+
+    $request = 'UPDATE `adresse` 
+                SET `nomDestinataire` = \'' . $name . '\', 
+                    `prenomDestinataire` = \'' . $surname . '\', 
+                    `nomRue` =\'' . $streetName . '\', 
+                    `codePostal` =\'' . $postalCode . '\', 
+                    `ville` =\'' . $cityName . '\', 
+                    `pays`=\'' . $country . '\'
+                WHERE `Utilisateur_idUtilisateur`= \'' . $idUser . '\';';
+    $bdd = new Database();
+    $donnee = $bdd->getOneData($request);
 }
 
 function getFactures($id) {
+    $request = 'Select * FROM `adresse` WHERE `Utilisateur_idUtilisateur` =' . $id . ';';
+    $bdd = new Database();
+    $donnee = $bdd->getOneData($request);
+
+    var_dump($donnee);
+}
+
+function getArticlesInFacture($id) {
     
 }
 ?>

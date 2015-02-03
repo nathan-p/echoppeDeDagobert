@@ -1,8 +1,11 @@
 $.variables = {
     color: 0
 }
-//formulaire function
-function checkSignIn(mailValide, inputMail){
+
+/************************************************/
+/********Fonctions pour la page de connextion****/
+/************************************************/
+function checkSignIn(mailValide, inputMail) {
     if (mailValide == 'true') {
         $("#divRegister").children().remove();
 
@@ -44,9 +47,6 @@ function checkForm() {
         $('#signInForm').submit();
     }
 }
-
-
-
 
 function checkMail() {
     var mailInput = $("#inputEmail").val();
@@ -93,24 +93,22 @@ function changeLanguage() {
 }
 
 
-
-
-$(document).ready(function() {
+$(document).ready(function () {
     var panels = $('.user-infos');
     var panelsButton = $('.dropdown-user');
     panels.hide();
 
     //Click dropdown
-    panelsButton.click(function() {
+    panelsButton.click(function () {
         //get data-for attribute
         var dataFor = $(this).attr('data-for');
         var idFor = $(dataFor);
 
         //current button
         var currentButton = $(this);
-        idFor.slideToggle(400, function() {
+        idFor.slideToggle(400, function () {
             //Completed slidetoggle
-            if(idFor.is(':visible'))
+            if (idFor.is(':visible'))
             {
                 currentButton.html('<i class="glyphicon glyphicon-triangle-top text-muted"></i>');
             }
@@ -126,3 +124,15 @@ $(document).ready(function() {
 
 });
 
+
+/************************************************/
+/********Fonctions pour la page de compte********/
+/************************************************/
+
+function cancelEditAdresse() {
+    
+}
+
+function editAdresse() {
+     $('#editAdressForm').submit();
+}
