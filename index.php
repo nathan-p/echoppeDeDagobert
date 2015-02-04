@@ -56,17 +56,17 @@
 	<div class="row">
 		<div class="col-md-3 categorie-block" id="cat_robe">
 			<div class="row" >
-				<div class="col-md-6 button"><center><a href="./costumes/costumeFemme.php"><p>Robes femmes</p></a></center></div>
+				<div class="col-md-6 button"><center><a href="./categorie.php?categorie=Alimentation"><p>BOUFFE</p></a></center></div>
 			</div>
 		</div>
 		<div class="col-md-3 col-md-offset-1 categorie-block" id="cat_arme">
 			<div class="row">
-				<div class="col-md-6 button"><center><a href="./armes/armes.php"><p>Armes</p></a></center></div>
+				<div class="col-md-6 button"><center><a href="./categorie.php?categorie=Arme"><p>Armes</p></a></center></div>
 			</div>
 		</div>
 		<div class="col-md-3 col-md-offset-1 categorie-block" id="cat_bijoux">
 			<div class="row">
-				<div class="col-md-6 button"><center><a href="./bijoux/bijoux.php"><p>bijoux</p></a></center></div>
+				<div class="col-md-6 button"><center><a href="./categorie.php?categorie=Bijoux"><p>bijoux</p></a></center></div>
 			</div>
 		</div>
 	</div>

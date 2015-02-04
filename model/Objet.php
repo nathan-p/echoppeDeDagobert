@@ -14,7 +14,7 @@ class Objet {
 	/**
 	 * @param array $donnees
      */
-	public function __constructor(array $donnees) {
+	public function hydrate(array $donnees) {
 
 		foreach ($donnees as $key => $value)
 		{
@@ -37,7 +37,7 @@ class Objet {
 		$id = (int) $id;
 		// si la conversion échoue, $id = 0
 		if ($id > 0) {
-			$this->$idObjet = $id;
+			$this->idObjet = $id;
 		}
 	}
 
@@ -46,7 +46,11 @@ class Objet {
 	 */
 	public function setNom($nom)
 	{
-		$this->nom = $nom;
+		if (is_string($nom)) {
+			$this->nom = $nom;
+		} else {
+			$this->nom = "kkkkk";
+		}
 	}
 
 	/**
@@ -80,7 +84,7 @@ class Objet {
 	public function setDescription($desc) {
 		$desc = (String) $desc;
 		
-		$this->$description = $desc;
+		$this->description = $desc;
 	}
 
 	/**
@@ -90,7 +94,7 @@ class Objet {
 		$s = (int) $s;
 		
 		if ($s > 0) {
-			$this->$stock = $s;
+			$this->stock = $s;
 		}
 	}
 
@@ -101,7 +105,7 @@ class Objet {
 		$p = (float) $p;
 		
 		if ($p > 0) {
-			$this->$prix = $p;
+			$this->prix = $p;
 		}
 	}
 

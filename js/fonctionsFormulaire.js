@@ -141,3 +141,10 @@ function detailFacture() {
     //choper l'id facture
     //Appel à facture.php
 }
+
+
+function search() {
+    var search = $('#search_input').val();
+
+    window.location.href = './searchResult.php?search='+search;
+}
