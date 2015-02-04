@@ -1,9 +1,9 @@
-<?php include('header.php'); ?>
+<?php include('../includes/header.php'); ?>
 
 <br><br><br><br>
 <div class="container">
 <ol class="breadcrumb">
-            <li><a href="./index.php">Accueil</a></li>
+            <li><a href="./home.php">Accueil</a></li>
             <li class="active">Conditions générales de vente</li>
         </ol>
 <div class="row">
@@ -67,4 +67,4 @@ les conditions pour en bénéficier.</p>
 </div><br><br><br>
 </div>
 
-<?php include('footer.php'); ?>
+<?php include('../includes/footer.php'); ?>

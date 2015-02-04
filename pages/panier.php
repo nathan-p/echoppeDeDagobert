@@ -1,4 +1,8 @@
-<?php include("header.php"); ?>
+<?php 
+    include("../includes/header.php"); 
+    include("../model/Database.php");
+
+?>
 
 <div class="content">
     <h1 class="content-heading">
@@ -45,10 +49,12 @@
         <tbody>
             <tr>
                 <td><img src="img/mr_ventouze.png"/></td>
-				<?php include("model/Database.php");
+				<?php 
+                
 				$jambon = Database::getOneData("SELECT nom FROM objet WHERE idObjet = 1");
 				var_dump($jambon);
-				echo "<td>$jambon[nom]</td>"; ?>
+				echo "<td>$jambon[nom]</td>"; 
+                ?>
                 <td>Lorem ipsum dolor sit amet</td>
                 <td>En Stock</td>
                 <td>500€</td>
@@ -74,4 +80,4 @@
     </div>
 </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
-<?php include("footer.php"); ?>
+<?php include("../includes/footer.php"); ?>

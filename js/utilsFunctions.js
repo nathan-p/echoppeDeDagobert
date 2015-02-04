@@ -148,3 +148,9 @@ function detailFacture() {
     //choper l'id facture
     //Appel à facture.php
 }
+
+
+function accountEdit() {
+    $("#adress-edit").css("display","inline-block");
+    $("#adress-consult").css("display","none");
+}

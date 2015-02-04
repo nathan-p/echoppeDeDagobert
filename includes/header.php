@@ -18,13 +18,13 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="description" content="Site web échoppe de Dagobert">
 	<title>L'échoppe de Dagobert</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
-	<link rel="stylesheet" type="text/css" href="css/metro-bootstrap-responsive.css">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<script type='text/javascript' src='js/fonctionsFormulaire.js'></script>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="../css/metro-bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.js"></script>
+	<script type='text/javascript' src='../js/utilsFunctions.js'></script>
 </head>
 
 <body>
@@ -53,7 +53,7 @@
 
 
 			<div class="col-md-2 ">
-				<a href="./index.php" class="title"><h1> 
+				<a href="../pages/home.php" class="title"><h1> 
 					<p><b>Echoppe</b></p>	 
 					<p><b>Dagobert</b></p>
 				</h1></a>

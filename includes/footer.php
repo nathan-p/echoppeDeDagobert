@@ -21,10 +21,10 @@
 			<div class="col-md-3">
 				<h3 class="footer-categories">MON COMPTE</h3>
 				<ul class="list-unstyled">
-					<li><a href="">Mon compte</a></li>
+					<li><a href="./compte.php">Mon compte</a></li>
 					<li><a href="">Mon panier</a></li>
-					<li><a href="">Mes commandes</a></li>
-					<li><a href="">Modifier mon adresse</a></li>
+					<li><a href="./compte.php">Mes commandes</a></li>
+					<li><a href="./compte.php">Modifier mon adresse</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3">

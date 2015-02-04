@@ -26,7 +26,20 @@ SET time_zone = "+00:00";
 -- Structure de la table `adresse`
 --
 
-CREATE TABLE IF NOT EXISTS `adresse` (
+drop table if exists adresse;
+drop table if exists souscategorie;
+drop table if exists objet_has_facture;
+drop table if exists objet;
+drop table if exists categorie;
+drop table if exists facture;
+drop table if exists utilisateur;
+
+
+
+
+
+
+CREATE TABLE `adresse` (
   `idadresse` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nomRue` varchar(45) DEFAULT NULL,
   `codePostal` varchar(45) DEFAULT NULL,
@@ -147,7 +160,7 @@ INSERT INTO `objet` (`idObjet`, `nom`, `description`, `stock`, `prix`, `promotio
 CREATE TABLE IF NOT EXISTS `objet_has_facture` (
   `Objet_idObjet` int(10) unsigned NOT NULL,
   `Facture_idFacture` int(10) unsigned NOT NULL,
-  `quantité` int(11) NOT NULL DEFAULT '0',
+  `quantite` int(11) NOT NULL DEFAULT '0',
   `commentaire` varchar(45) DEFAULT NULL,
   `note` int(11) DEFAULT NULL,
   `date` date DEFAULT NULL,
@@ -160,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `objet_has_facture` (
 -- Contenu de la table `objet_has_facture`
 --
 
-INSERT INTO `objet_has_facture` (`Objet_idObjet`, `Facture_idFacture`, `quantité`, `commentaire`, `note`, `date`) VALUES
+INSERT INTO `objet_has_facture` (`Objet_idObjet`, `Facture_idFacture`, `quantite`, `commentaire`, `note`, `date`) VALUES
 (2, 2, 1, NULL, NULL, NULL),
 (4, 1, 2, 'Bof', 2, '2015-02-04'),
 (5, 2, 4, NULL, NULL, NULL),

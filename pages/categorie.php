@@ -5,9 +5,9 @@
  * Date: 02/02/2015
  */
 
-include("./header.php");
-include("./model/ObjetManager.php");
-include("./model/Objet.php");
+include("../includes/header.php");
+include("../model/ObjetManager.php");
+include("../model/Objet.php");
 $objets = ObjetManager::getObjets("Alimentation");
 $html = '<ol class="menu-panier">';
 foreach ($objets as $objet) {
@@ -23,4 +23,4 @@ $html = $html.'</ol>';
 echo $html;
 
 
-include("./footer.php"); ?>
+include("../includes/footer.php"); ?>

@@ -1,5 +1,5 @@
 <?php
-include("header.php");
+include("../includes/header.php");
 
 if (isset($_GET["state"]) && $_GET["state"] == "wrong") {
     $wrongConnection = false;
@@ -11,7 +11,7 @@ if (isset($_GET["state"]) && $_GET["state"] == "wrong") {
 <div style="margin-top:40px;">
     <div class="content">
         <ol class="breadcrumb">
-            <li><a href="./index.php">Accueil</a></li>
+            <li><a href="./home.php">Accueil</a></li>
             <li class="active">Authentication</li>
         </ol>
         <h1 class="TitleMainDiv">
@@ -75,4 +75,4 @@ if (isset($_GET["state"]) && $_GET["state"] == "wrong") {
     </div>
 </div><br><br><br><br><br>
 </div>
-<?php include("footer.php"); ?>
+<?php include("../includes/footer.php"); ?>

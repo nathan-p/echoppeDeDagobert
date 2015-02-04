@@ -325,4 +325,25 @@ a.list-group-item.active small {
     margin:20px auto 1px;    
 }
 
+/*
+*********************************************************
+****************  PAGE COMPTE ***************************
+*********************************************************
+*/
 
+#compte-edit-button {
+	color:#811512;
+}
+
+#compte-edit-button:hover {
+	cursor: pointer;
+}
+
+
+#adress-edit {
+	display: none;
+}
+
+#adress-consult {
+	display : inline-block;
+}

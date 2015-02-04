@@ -1,5 +1,5 @@
 <?php 
-	include("./header.php");
+	include("../includes/header.php");
 
 	$sended = false;
 
@@ -13,7 +13,7 @@
 
 <div class="container" id="contact">
     <ol class="breadcrumb">
-            <li><a href="./index.php">Accueil</a></li>
+            <li><a href="./home.php">Accueil</a></li>
             <li class="active">Contact</li>
         </ol>
 	<h2>Contactez-nous !</h2>
@@ -88,6 +88,6 @@
 </div>
 <?php 
 
-	include("./footer.php");
+	include("../includes/footer.php");
 	
 ?>

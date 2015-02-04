@@ -1,10 +1,10 @@
-<?php include('header.php'); ?>
+<?php include('../includes/header.php'); ?>
 
 
 <br><br><br><br>
 <div class="container">
 	<ol class="breadcrumb">
-            <li><a href="./index.php">Accueil</a></li>
+            <li><a href="./home.php">Accueil</a></li>
             <li class="active">Foire aux questions</li>
         </ol>
 	<ul class="list-group col-md-10 col-md-offset-1">
@@ -53,4 +53,4 @@
 </div>
 
 
-<?php include('footer.php'); ?>
+<?php include('../includes/footer.php'); ?>

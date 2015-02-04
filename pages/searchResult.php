@@ -1,9 +1,9 @@
 <?php 
 
 	
-	include ("model/Database.php");
+	include ("../model/Database.php");
 
-	include("header.php"); 
+	include("../includes/header.php"); 
 
 
 ?>
@@ -25,7 +25,7 @@
 
 				$result = Database::getAllData($req);
 
-
+				$i = 0;
 
 				foreach ($result as $key => $value) {
 					echo '
@@ -57,6 +57,11 @@
 				</a>
 
 				';
+				$i ++;
+				}
+
+				if($i == 0) {
+					echo "<center><p style='margin-bottom:400px;color:red;'>Aucun produit ne correspond à votre recherche !</p></center>";
 				}
 			}
 
@@ -69,4 +74,4 @@
 </div>
 
 
-<?php include("footer.php"); ?>
+<?php include("../includes/footer.php"); ?>

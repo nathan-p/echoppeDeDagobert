@@ -1,6 +1,6 @@
 <?php 
 	session_start(); 
-	include_once("model/Database.php");
+	include_once("../model/Database.php");
 	if(isset($_GET['connect'])) {
 		if($_GET['connect'] == "true" ) {
 			connect();
@@ -23,7 +23,7 @@
 
 			$_SESSION['connected'] = 1; 
 			$_SESSION['mail'] = $mail;
-		 	header('Location: ./index.php');
+		 	header('Location: ./home.php');
 		 } 
 		 else {
 			header('Location: ./loginPage.php?state=wrong');
@@ -33,7 +33,7 @@
 
 	function deconnect() {
 		unset($_SESSION['connected']);
-		header('Location: ./index.php');
+		header('Location: ./home.php');
 	}
 	
 
