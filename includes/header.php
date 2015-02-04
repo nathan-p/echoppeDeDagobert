@@ -87,12 +87,12 @@
 					<ul class="nav navbar-nav">
 						<!-- MENU ITEM COSTUMES -->
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Costumes <span class="caret"></span></a>
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Costumes<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Pour femme</a></li>
-								<li><a href="#">Pour homme</a></li>
+								<li><a href='categorie.php?categorie=Pour_femme'>Pour femme</a></li>
+								<li><a href="categorie.php?categorie=Pour_homme">Pour homme</a></li>
 								<li class="divider"></li>
-								<li><a href="#">Chaussures</a></li>
+								<li><a href="categorie.php?categorie=Chaussures">Chaussures</a></li>
 							</ul>
 						</li>
 
@@ -100,22 +100,22 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Armes <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Armes</a></li>
-								<li><a href="#">Armures</a></li>
+								<li><a href="categorie.php?categorie=Armes">Armes</a></li>
+								<li><a href="categorie.php?categorie=Armures">Armures</a></li>
 								<li class="divider"></li>
-								<li><a href="#">Instruments de torture</a></li>
+								<li><a href="categorie.php?categorie=Instruments_de_torture">Instruments de torture</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Instruments</a></li>
-						<li><a href="#">Bijoux</a></li>
+						<li><a href="categorie.php?categorie=Instruments">Instruments</a></li>
+						<li><a href="categorie.php?categorie=Bijoux">Bijoux</a></li>
 
 
 						<!-- MENU ITEM MOBILIER -->
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mobilier & autres <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Mobilier</a></li>
-								<li><a href="#">Campement</a></li>
+								<li><a href="categorie.php?categorie=Mobilier">Mobilier</a></li>
+								<li><a href="categorie.php?categorie=Campement">Campement</a></li>
 							</ul>
 						</li>
 
@@ -123,10 +123,10 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Alimentation <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Viandes</a></li>
-								<li><a href="#">Fruits et légumes bio</a></li>
+								<li><a href="categorie.php?categorie=Viandes">Viandes</a></li>
+								<li><a href="categorie.php?categorie=Fruits_et_légumes_bio">Fruits et légumes bio</a></li>
 								<li class="divider"></li>
-								<li><a href="#">Boissons</a></li>
+								<li><a href="categorie.php?categorie=Boissons">Boissons</a></li>
 							</ul>
 						</li>
 

@@ -8,19 +8,23 @@
 include("../includes/header.php");
 include("../model/ObjetManager.php");
 include("../model/Objet.php");
-$objets = ObjetManager::getObjets("Alimentation");
-$html = '<ol class="menu-panier">';
+
+$categorie = $_GET["categorie"];
+
+$objets = ObjetManager::getObjets($categorie);
+$html = '<ol>';
 foreach ($objets as $objet) {
-    $html = $html.'<li><ul>'
+    $html = $html
         .'<li>'.$objet->getNom().'</li>'
         .'<li>'.$objet->getDescription().'</li>'
-        .'<li><a href="./objet.php?id='.$objet->getIdObjet().'"> click me bitch</a></li>'
-        .'</ul></li>';
+        .'<li><a href="./objet.php?id='.$objet->getIdObjet().'"> click me bitch</a></li>';
 }
-
 $html = $html.'</ol>';
+?>
 
-echo $html;
+<div class="content">
+    <?php echo $html ?>
+</div>
 
-
+<?php
 include("../includes/footer.php"); ?>

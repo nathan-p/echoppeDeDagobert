@@ -9,6 +9,7 @@ class Objet {
 	private $prix;
 	private $promotion;
 	private $urlImage;
+	private $Categorie_idCategorie;
 	private $SousCategorie_idCategorie;
 
 	/**
@@ -70,13 +71,20 @@ class Objet {
 	}
 
 	/**
+	 * @param mixed $Categorie_idCategorie
+	 */
+	public function setCategorieIdCategorie($Categorie_idCategorie)
+	{
+		$this->Categorie_idCategorie = $Categorie_idCategorie;
+	}
+
+	/**
 	 * @param mixed $SousCategorie_idCategorie
 	 */
 	public function setSousCategorieIdCategorie($SousCategorie_idCategorie)
 	{
 		$this->SousCategorie_idCategorie = $SousCategorie_idCategorie;
 	}
-
 
 	/**
 	 * @param $desc
@@ -163,6 +171,14 @@ class Objet {
 	public function getUrlImage()
 	{
 		return $this->urlImage;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getCategorieIdCategorie()
+	{
+		return $this->Categorie_idCategorie;
 	}
 
 	/**
