@@ -1,8 +1,8 @@
 <?php
      
-include("../includes/header.php");
-include("../model/ObjetManager.php");
-include("../model/Objet.php");
+include_once("../includes/header.php");
+include_once("../model/ObjetManager.php");
+include_once("../model/Objet.php");
     
 $categorie = $_GET["categorie"];
 // Par convention, on met les espaces avec le caractère '_'. On remplace
@@ -42,5 +42,5 @@ $html = $html.'</ul>';
 </div>
     
 <?php
-include("../includes/footer.php");
+include_once("../includes/footer.php");
 ?>
