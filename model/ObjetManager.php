@@ -1,6 +1,7 @@
 <?php
 
 include_once 'Database.php';
+include_once "Objet.php";
 
 class ObjetManager {
 
@@ -13,9 +14,12 @@ class ObjetManager {
         $req = 'SELECT * '
                 . 'FROM objet '
                 . 'WHERE idObjet="' . $id . '";';
-        $object = Database::getOneData($req);
+        $result = Database::getOneData($req);
 
-        return new Objet($object);
+        $object = new Objet();
+        $object->hydrate($result);
+
+        return $object;
     }
 
     /**

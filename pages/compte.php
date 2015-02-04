@@ -1,4 +1,9 @@
 <?php
+
+if(!isset($_SESSION['mail'])) {
+    header('Location: ./loginPage.php');
+}
+
 include("../includes/header.php");
 include("./myAccountFunctions.php");
 
