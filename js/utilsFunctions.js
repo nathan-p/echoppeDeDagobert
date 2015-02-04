@@ -143,10 +143,6 @@ function cancelEditAdresse() {
     $("#compte-edit-button").css("color","#811512");
 }
 
-function editAdresse() {
-     $('#editAdressForm').submit();
-}
-
 function detailFacture() {
     //choper l'id facture
     //Appel à facture.php

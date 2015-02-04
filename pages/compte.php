@@ -6,7 +6,7 @@ $mail = $_SESSION['mail'];
 $id = getId($mail);
 $donnee = getAdress($id);
 
-$name = $donnee['nomDestinataire'];
+$name = strtoupper($donnee['nomDestinataire']);
 $surname = $donnee['prenomDestinataire'];
 $streetName = $donnee['nomRue'];
 $postalCode = $donnee['codePostal'];
@@ -60,7 +60,7 @@ $country = $donnee['pays'];
                                         </div>
 
                                         <div class="col-sm-8">
-                                            <p> <?php echo  $surname." ".$name  ?> </p>
+                                            <p> <?php echo  $name." ".$surname  ?> </p>
                                         </div>
                                     </div>
 
@@ -117,7 +117,7 @@ $country = $donnee['pays'];
                                     <!-- Text input-->
                                     <div class="form-group">
                                         <div class="col-sm-4">
-                                            <input type="text" name='codePostal' placeholder="CodePostal" value=<?php echo  "'$postalCode'" ?> class="form-control">
+                                            <input type="number" name='codePostal' pattern="^([0-9]{5})$" placeholder="CodePostal" value=<?php echo  "'$postalCode'" ?> class="form-control">
                                         </div>
                                         <div class="col-sm-8">
                                             <input type="text" name='ville' placeholder="Ville" value=<?php echo "'$cityName'" ?> class="form-control">
@@ -133,7 +133,7 @@ $country = $donnee['pays'];
                                         <div class="col-sm-offset-2 col-sm-10">
                                             <div class="pull-right">
                                                 <button type="button" onClick='cancelEditAdresse();' class="btn btn-default">Annuler</button>
-                                                <button type="button" onClick='editAdresse();' class="btn btn-primary">Sauvegarder</button>
+                                                <button type="submit" class="btn btn-primary">Sauvegarder</button>
                                             </div>
                                         </div>
                                     </div>
