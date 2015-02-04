@@ -40,6 +40,9 @@ $html = $html.'</ul>';
         </div>
     </div>
 </div>
+
+<br><br><br>
+</div>
     
 <?php
 include_once("../includes/footer.php");
