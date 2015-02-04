@@ -6,15 +6,17 @@ class Database {
      * Réalise la connexion à la base de donnée
      * @return \PDO Une variable de connexion à la base de donnée
      */
-    private static function connect(){ 
-      $account = "root";
-      $password = "";
-        try{ 
-            return new PDO('mysql:host=localhost;dbname=bd_echoppe', $account, $password);
-        } catch (Exception $e){ 
-
-            die('Erreur : ' . $e->getMessage()); 
-        } 
+    private static function connect() {
+        $account = "root";
+        $password = "";
+        try {
+            return new PDO('mysql:host=localhost;dbname=bd_echoppe',
+                    $account,
+                    $password,
+                    array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
     } 
     
     /**
