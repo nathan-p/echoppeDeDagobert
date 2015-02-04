@@ -1,24 +1,31 @@
 <?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 
-if(!isset($_SESSION['mail'])) {
-    header('Location: ./loginPage.php');
-}
+    //var_dump($_SESSION);
 
-include("../includes/header.php");
-include("./myAccountFunctions.php");
+    if(!isset($_SESSION['connected'])) {
 
-$mail = $_SESSION['mail'];
-$id = getId($mail);
-$donnee = getAdress($id);
+        header('Location: ./loginPage.php');
+    }
 
-$name = strtoupper($donnee['nomDestinataire']);
-$surname = $donnee['prenomDestinataire'];
-$streetName = $donnee['nomRue'];
-$postalCode = $donnee['codePostal'];
-$cityName = $donnee['ville'];
-$country = $donnee['pays'];
+    include("../includes/header.php");
+    include("./myAccountFunctions.php");
 
-//Interoger bd pour demander nom, nb d'adresse, l'adresse, les factures etc...
+    $mail = $_SESSION['mail'];
+    $id = getId($mail);
+    $donnee = getAdress($id);
+
+    $name = strtoupper($donnee['nomDestinataire']);
+    $surname = $donnee['prenomDestinataire'];
+    $streetName = $donnee['nomRue'];
+    $postalCode = $donnee['codePostal'];
+    $cityName = $donnee['ville'];
+    $country = $donnee['pays'];
+
+    //Interoger bd pour demander nom, nb d'adresse, l'adresse, les factures etc...
 ?>
 
 <div class="content">

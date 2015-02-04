@@ -1,5 +1,8 @@
 <?php 
-	session_start();
+	if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 
 	$connected = 0;
 	if(isset($_SESSION['connected'])) {
