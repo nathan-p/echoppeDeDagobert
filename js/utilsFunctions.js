@@ -137,7 +137,10 @@ function search() {
 /************************************************/
 
 function cancelEditAdresse() {
-    
+    $("#adress-consult").css("display","inline-block");
+    $("#adress-edit").css("display","none");
+    $("#compte-edit-button").css("cursor","pointer");
+    $("#compte-edit-button").css("color","#811512");
 }
 
 function editAdresse() {
@@ -153,4 +156,6 @@ function detailFacture() {
 function accountEdit() {
     $("#adress-edit").css("display","inline-block");
     $("#adress-consult").css("display","none");
+    $("#compte-edit-button").css("cursor","auto");
+    $("#compte-edit-button").css("color","gray");
 }
