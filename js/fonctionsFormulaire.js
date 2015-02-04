@@ -136,3 +136,8 @@ function cancelEditAdresse() {
 function editAdresse() {
      $('#editAdressForm').submit();
 }
+
+function detailFacture() {
+    //choper l'id facture
+    //Appel à facture.php
+}

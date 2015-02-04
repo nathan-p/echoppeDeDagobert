@@ -7,8 +7,6 @@ and open the template in the editor.
 <?php
 include_once("./model/Database.php");
 
-//$mail = $_SESSION['mail'];
-
 function getId($mail) {
     $request = 'SELECT `idUtilisateur` FROM `utilisateur` WHERE `mail`= \'' . $mail . '\';';
     $bdd = new Database();
@@ -35,26 +33,50 @@ function setAdress() {
     $country = $_POST['pays'];
 
     $request = 'UPDATE `adresse` 
-                SET `nomDestinataire` = \'' . $name . '\', 
-                    `prenomDestinataire` = \'' . $surname . '\', 
-                    `nomRue` =\'' . $streetName . '\', 
-                    `codePostal` =\'' . $postalCode . '\', 
-                    `ville` =\'' . $cityName . '\', 
-                    `pays`=\'' . $country . '\'
-                WHERE `Utilisateur_idUtilisateur`= \'' . $idUser . '\';';
+                    SET `nomDestinataire` = \'' . $name . '\', 
+                        `prenomDestinataire` = \'' . $surname . '\', 
+                        `nomRue` =\'' . $streetName . '\', 
+                        `codePostal` =\'' . $postalCode . '\', 
+                        `ville` =\'' . $cityName . '\', 
+                        `pays`=\'' . $country . '\'
+                    WHERE `Utilisateur_idUtilisateur`= \'' . $idUser . '\';';
     $bdd = new Database();
     $donnee = $bdd->getOneData($request);
 }
 
 function getFactures($id) {
-    $request = 'Select * FROM `adresse` WHERE `Utilisateur_idUtilisateur` =' . $id . ';';
+    $request = 'Select * FROM `facture` WHERE `Utilisateur_idUtilisateur` =' . $id . ';';
     $bdd = new Database();
-    $donnee = $bdd->getOneData($request);
+    $donnee = $bdd->getAllData($request);
+    $ligne = $donnee->fetch();
 
-    var_dump($donnee);
+    while ($ligne != false) {
+        echo ' 
+                        <tr>
+                            <td>
+                               ' . $ligne['idFacture'] . ' 
+                            </td>
+                            <td>
+                                ' . $ligne['date'] . ' 
+                            </td>
+                            <td>
+                                ' . $ligne['prixHT'] . ' €
+                            </td>
+                            <td>
+                                ' . $ligne['prixTotal'] . ' €
+                            </td>
+                            <td>
+                            <form  action=\'./facture.php\' id=\'factureForm\' method=\'post\' role="form">
+                                <input type=\'hidden\' name=\'id\' id=\'id\' value=\''. $ligne['idFacture'] .'\'/>
+                                <button type="button" onClick="submit()" class="btn btn-default btn-sm" aria-label="Details">
+                                    <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Détails
+                                </button>
+                            </form>
+                            </td>
+                        </tr>';
+        $ligne = $donnee->fetch();
+    }
+    $donnee->closeCursor();
 }
 
-function getArticlesInFacture($id) {
-    
-}
 ?>

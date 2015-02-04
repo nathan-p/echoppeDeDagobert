@@ -127,45 +127,8 @@ $country = $donnee['pays'];
                             </th>
                         </tr>
                     </thead>
-                    <tr>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-default btn-sm" aria-label="Details">
-                                <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Détails
-                            </button>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-default btn-sm" aria-label="Details">
-                                <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Détails
-                            </button>
-                        </td>
-                    </tr>
+                    <!--insérer les factures via php--> 
+                    <?php getFactures($id); ?>                    
                 </table>
 
             </div>
