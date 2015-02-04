@@ -26,19 +26,14 @@ class ObjetManager {
      * @return \Objet Tableau contenant les objets récupérés.
      */
     public static function getObjets($categoryName) {
-        // Par convention, on met les espaces avec le caractère '_'. On remplace
-        // donc ici tous les '_' par des espaces.
-        // Problème sinon dans les $_GET avec les espaces remplacés par '%20'
-        $categoryName = str_replace("_", " ", $categoryName);
-        
         $request = 'SELECT * '
                 . 'FROM objet '
                 . 'WHERE Categorie_idCategorie = (SELECT idCategorie '
-                . '                               FROM categorie '
-                . '                               WHERE nom = "' . $categoryName . '") '
+                                               . 'FROM categorie '
+                                               . 'WHERE nom = "' . $categoryName . '") '
                 . 'OR SousCategorie_idCategorie = (SELECT idCategorie '
-                . '                                FROM souscategorie '
-                . '                                WHERE nom = "' . $categoryName . '")';
+                                                . 'FROM souscategorie '
+                                                . 'WHERE nom = "' . $categoryName . '")';
         $result = Database::getAllData($request);
         
         $objets = array();
