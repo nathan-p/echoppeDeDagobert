@@ -125,6 +125,13 @@ $(document).ready(function () {
 });
 
 
+
+function search() {
+    var search = $('#search_input').val();
+
+    window.location.href = './searchResult.php?search='+search;
+}
+
 /************************************************/
 /********Fonctions pour la page de compte********/
 /************************************************/
@@ -140,11 +147,4 @@ function editAdresse() {
 function detailFacture() {
     //choper l'id facture
     //Appel à facture.php
-}
-
-
-function search() {
-    var search = $('#search_input').val();
-
-    window.location.href = './searchResult.php?search='+search;
 }

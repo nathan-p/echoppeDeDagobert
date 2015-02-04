@@ -68,6 +68,7 @@ function getFactures($id) {
                             <td>
                             <form  action=\'./facture.php\' id=\'factureForm\' method=\'post\' role="form">
                                 <input type=\'hidden\' name=\'id\' id=\'id\' value=\''. $ligne['idFacture'] .'\'/>
+                                <input type=\'hidden\' name=\'date\' id=\'date\' value=\''. $ligne['date'] .'\'/>
                                 <button type="button" onClick="submit()" class="btn btn-default btn-sm" aria-label="Details">
                                     <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Détails
                                 </button>
