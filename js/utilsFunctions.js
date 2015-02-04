@@ -161,3 +161,13 @@ function accountEdit() {
     $("#compte-edit-button").removeAttr( "data-placement" );
     $("#compte-edit-button").removeAttr( "data-original-title" );
 }
+
+
+/************************************************/
+/********Fonctions pour la page de panier********/
+/************************************************/
+
+
+function deleteLineFromCart(lineNumber) {
+    alert("Suppression du produit numéro "+lineNumber+" dans le panier");
+}
