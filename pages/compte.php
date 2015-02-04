@@ -46,7 +46,8 @@ $country = $donnee['pays'];
                                 <legend>
                                     Addresse de livraison 
                                     <div class="pull-right">
-                                        <span class="glyphicon glyphicon-edit" onclick="accountEdit();" id="compte-edit-button" aria-hidden="true"></span>
+                                        <span class="glyphicon glyphicon-edit" onclick="accountEdit();" id="compte-edit-button" 
+                                        aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Modifier mon compte"></span>
                                         <br>
                                     </div>
                                 </legend>
