@@ -7,13 +7,13 @@ class ObjetManager {
 
     /**
      * Retourne l'objet correspondant à l'identifiant passé en paramètre.
-     * @param type $id Identifiant de l'objet à récupérer.
+     * @param type $idObjet Identifiant de l'objet à récupérer.
      * @return \Objet Objet correspondant à l'identifiant donné.
      */
-    public static function getObjet($id) {
+    public static function getObjet($idObjet) {
         $req = 'SELECT * '
                 . 'FROM objet '
-                . 'WHERE idObjet="' . $id . '";';
+                . 'WHERE idObjet="' . $idObjet . '";';
         $result = Database::getOneData($req);
 
         $object = new Objet();
@@ -50,5 +50,5 @@ class ObjetManager {
 
         return $objets;
     }
-
+    
 }
