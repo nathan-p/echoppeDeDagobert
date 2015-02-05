@@ -228,7 +228,7 @@ footer a:hover {
     font-weight: bold;
 }
 
-.product-list img {
+.product-list .photoObjet img {
     width: 270px;
     height: 270px;
 }

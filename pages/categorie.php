@@ -15,9 +15,11 @@ $html = '<ul style="list-style: none">';
 foreach ($objets as $objet) {
     $html = $html
         . '<div class="col-md-4">'
-            . '<li><h2>' . $objet->getNom() . '<h2></li>'
+            . '<li><h2>' . $objet->getNom() . '</h2></li>'
             . '<li>'
-                . '<img src="../img/' . $objet->getUrlImage() . '">'
+                . '<div class="photoObjet">'
+                    . '<img src="../img/' . $objet->getUrlImage() . '">'
+                . '</div>'
             . '</li>'
             . '<li>' . $objet->getDescription() . '</li>'
             . '<a href="./detailObjet.php?idObjet=' . $objet->getIdObjet() . '" style="color: white"> '
