@@ -5,16 +5,13 @@
     } 
 
 	$connected = 0;
-	if(isset($_SESSION['connected'])) {
-		if($_SESSION['connected'] == 0) {
-			$connected = 0;
-		} else {
-			$connected = 1;
-		}
-	}
+	if(isset($_SESSION['user'])) {
+		$connected = 1;
+	} 
+
 
 	if(isset($_SESSION['cart'])) {
-		$cart = "( ".count($_SESSION['cart'])." articles)";
+		$cart = "(".count($_SESSION['cart'])." articles)";
 	}
 	else {
 		$cart = "(vide)";
@@ -45,7 +42,7 @@
 				<?php 
 				if($connected) {
 					echo '<a href="./compte.php" style="margin-right:20px;">Mon compte</a>';
-					echo '<a href="./connect.php?connect=false" style="margin-right:20px;">Déconnexion</a>';
+					echo '<a href="../utils/connect.php?connect=false" style="margin-right:20px;">Déconnexion</a>';
 				} 
 				else {
 					echo '<a href="./loginPage.php" style="margin-right:20px;">Connexion</a>';

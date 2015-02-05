@@ -50,7 +50,7 @@ if (isset($_GET["state"]) && $_GET["state"] == "wrong") {
                         <hr>
                     </div>
                     <div class="LoginForm">
-                        <form name="loginForm" action='./connect.php'>
+                        <form name="loginForm" action='../utils/connect.php'>
                             <div class="form-group">
                                 <label for="InputEmail">Adresse mail</label>
                                 <input type="email" class="form-control" name="mail" id="InputEmail" placeholder="Enter email">

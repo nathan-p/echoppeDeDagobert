@@ -6,7 +6,7 @@
 	<ol class="breadcrumb">
             <li><a href="./home.php">Accueil</a></li>
             <li class="active">Foire aux questions</li>
-        </ol>
+    </ol>
 	<ul class="list-group col-md-10 col-md-offset-1">
 		<li class="list-group-item">
 			<h4><b>A combien s'élèvent les frais d'expédition ?</b></h4>

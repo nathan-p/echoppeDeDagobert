@@ -43,11 +43,11 @@
 	<!-- Controls -->
 	<a class="left carousel-control" href="#slider" role="button" data-slide="prev">
 		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		<span class="sr-only">Previous</span>
+		<span class="sr-only">Précédant</span>
 	</a>
 	<a class="right carousel-control" href="#slider" role="button" data-slide="next">
 		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		<span class="sr-only">Next</span>
+		<span class="sr-only">Suivant</span>
 	</a>
 </div>
 
@@ -56,7 +56,7 @@
 	<div class="row">
 		<div class="col-md-3 categorie-block" id="cat_robe">
 			<div class="row" >
-				<div class="col-md-6 button"><center><a href="./categorie.php?categorie=Alimentation"><p>BOUFFE</p></a></center></div>
+				<div class="col-md-6 button"><center><a href="./categorie.php?categorie=Alimentation"><p>Robes</p></a></center></div>
 			</div>
 		</div>
 		<div class="col-md-3 col-md-offset-1 categorie-block" id="cat_arme">

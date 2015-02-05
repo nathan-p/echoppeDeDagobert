@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <?php
 include_once("../model/Database.php");
-include("header.php");
+include("../includes/header.php");
 
 $id = $_POST['id'];
 $date = $_POST['date'];
