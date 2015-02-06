@@ -137,10 +137,10 @@ INSERT INTO `objet` (`idObjet`, `nom`, `description`, `stock`, `prix`, `promotio
 (5, 'Costume de gueux', 'Set complet pour se déguiser en gueux', 5, 20, NULL, '01510-bl09-wolltunika-lodin-rot-1.jpg', 1, 2),
 (6, 'Robe', 'Robe de princesse de Super Royaume', 2, 99, NULL, 'robe super royaume.png', 1, 1),
 (7, 'Harpe', 'Harpe de troubadour', 5, 400, NULL, NULL, 3, NULL),
-(8, 'Anneau', 'Anneau avec des diamants et des rubis', 2, 500, NULL, NULL, 4, NULL),
+(8, 'Anneau', 'Anneau avec des diamants et des rubis', 2, 500, NULL, 15, 4, NULL),
 (9, 'Table ronde', 'La table ronde de Camelot', 12, 200, NULL, NULL, 5, 7),
 (10, 'Moitié de Robe', 'Robe de princesse de Super', 1, 50, NULL, 'mittelalter-blusen.jpg', 1, 1),
-(11, 'Bustier tepu', 'Parce que je le veux bien', 1, 250, NULL, 'lplm1409_ledermieder_antik_1.jpg', 1, 1),
+(11, 'Bustier tepu', 'Parce que je le veux bien', 1, 250, 50, 'lplm1409_ledermieder_antik_1.jpg', 1, 1),
 (12, 'Tee shirt Dagobert', 'OMG je le veux', 1, 130, NULL, '22026w.jpg', 1, 1);
 
 -- --------------------------------------------------------

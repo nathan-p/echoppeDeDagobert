@@ -14,7 +14,17 @@ $objets = ObjetManager::getObjets($categorie);
 $html = '<ul style="list-style: none">';
 foreach ($objets as $objet) {
     $desc = $objet->getDescription();
-    $desc = mb_strimwidth($desc, 0, 100);
+    // limiter la description à 150 caractères
+    if (mb_strlen($desc) > 147) {
+        $desc = mb_strimwidth($desc, 0, 147).'...';
+    }
+    $prix = "";
+    if (!is_null($objet->getPromotions())) {
+        $prix = '<div><span style="text-decoration:line-through"> ' . $objet->getPrix() . '€</span>';
+        $prix .= '   -'.$objet->getPromotions().'% <br>'.($objet->getPrix()*$objet->getPromotions()/100).'€</div>';
+    } else {
+        $prix = '<span> ' . $objet->getPrix() . '€</span>';
+    }
     $html = $html
         . '<div class="col-md-4">'
             . '<div class="col-md-11 well" style="padding:10px">'
@@ -26,7 +36,8 @@ foreach ($objets as $objet) {
                 . '<li><h2>' . $objet->getNom() . '</h2></li>'
                 . '<li style="height:60px">' . $desc . ' </li>'
                 . '<li>'
-                    .'<span> ' . $objet->getPrix() . '€ </span>'
+                    .$prix
+
                     . '<a href="./detailObjet.php?idObjet=' . $objet->getIdObjet() . '" style="color: white"> '
                         . '<div class="btn btn-default pull-right">'
                             . 'Détails'

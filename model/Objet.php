@@ -7,7 +7,7 @@ class Objet {
 	private $description;
 	private $stock;
 	private $prix;
-	private $promotion;
+	private $promotions;
 	private $urlImage;
 	private $Categorie_idCategorie;
 	private $SousCategorie_idCategorie;
@@ -55,11 +55,11 @@ class Objet {
 	}
 
 	/**
-	 * @param mixed $promotion
+	 * @param mixed $promotions
 	 */
-	public function setPromotion($promotion)
+	public function setPromotions($promotions)
 	{
-		$this->promotion = $promotion;
+		$this->promotions = $promotions;
 	}
 
 	/**
@@ -160,9 +160,9 @@ class Objet {
 	/**
 	 * @return mixed
 	 */
-	public function getPromotion()
+	public function getPromotions()
 	{
-		return $this->promotion;
+		return $this->promotions;
 	}
 
 	/**
