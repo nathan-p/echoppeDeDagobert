@@ -13,21 +13,28 @@ $categorie = str_replace("_", " ", $categorie);
 $objets = ObjetManager::getObjets($categorie);
 $html = '<ul style="list-style: none">';
 foreach ($objets as $objet) {
+    $desc = $objet->getDescription();
+    $desc = mb_strimwidth($desc, 0, 100);
     $html = $html
         . '<div class="col-md-4">'
-            . '<li><h2>' . $objet->getNom() . '</h2></li>'
-            . '<li>'
-                . '<div class="photoObjet">'
-                    . '<img src="../img/' . $objet->getUrlImage() . '">'
-                . '</div>'
-            . '</li>'
-            . '<li>' . $objet->getDescription() . '</li>'
-            . '<a href="./detailObjet.php?idObjet=' . $objet->getIdObjet() . '" style="color: white"> '
-                . '<li class="btn btn-default pull-right">'
-                    . 'Détails'
+            . '<div class="col-md-11 well" style="padding:10px">'
+                . '<li>'
+                    . '<div class="photoObjet">'
+                        . '<img src="../img/' . $objet->getUrlImage() . '">'
+                    . '</div>'
+                .  '</li>'
+                . '<li><h2>' . $objet->getNom() . '</h2></li>'
+                . '<li style="height:60px">' . $desc . ' </li>'
+                . '<li>'
+                    .'<span> ' . $objet->getPrix() . '€ </span>'
+                    . '<a href="./detailObjet.php?idObjet=' . $objet->getIdObjet() . '" style="color: white"> '
+                        . '<div class="btn btn-default pull-right">'
+                            . 'Détails'
+                        . '</div>'
+                    . '</a>'
                 . '</li>'
-            . '</a>'
-        . '</div>';
+                . '</div>'
+                . '</div>';
 }
 $html = $html.'</ul>';
 ?>

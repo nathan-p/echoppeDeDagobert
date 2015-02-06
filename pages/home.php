@@ -56,7 +56,7 @@
 	<div class="row">
 		<div class="col-md-3 categorie-block" id="cat_robe">
 			<div class="row" >
-				<div class="col-md-6 button"><center><a href="./categorie.php?categorie=Alimentation"><p>Robes</p></a></center></div>
+				<div class="col-md-6 button"><center><a href="./categorie.php?categorie=Costumes"><p>Robes</p></a></center></div>
 			</div>
 		</div>
 		<div class="col-md-3 col-md-offset-1 categorie-block" id="cat_arme">

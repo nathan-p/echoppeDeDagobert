@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `objet` (
   `stock` int(11) NOT NULL,
   `prix` float NOT NULL,
   `promotions` varchar(45) DEFAULT NULL,
-  `urlImage` varchar(255) DEFAULT NULL,
+  `urlImage` varchar(255) DEFAULT 'mr_ventouze.png',
   `Categorie_idCategorie` int(10) unsigned NOT NULL,
   `SousCategorie_idCategorie` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`idObjet`),
@@ -130,11 +130,11 @@ CREATE TABLE IF NOT EXISTS `objet` (
 --
 
 INSERT INTO `objet` (`idObjet`, `nom`, `description`, `stock`, `prix`, `promotions`, `urlImage`, `Categorie_idCategorie`, `SousCategorie_idCategorie`) VALUES
-(1, 'Jambon', 'Jambon Fleury Michon', 20, 3.81, NULL, NULL, 6, 9),
+(1, 'Jambon', 'Jambon Fleury Michon', 20, 3.81, NULL, 'jambon.jpg', 6, 9),
 (2, 'Hydromel', 'Boisson fermentée à base d''eau et de miel', 12, 12, NULL, NULL, 6, 11),
 (3, 'Pain', 'Pain de campagne fais maison', 52, 0.81, NULL, NULL, 6, NULL),
-(4, 'Armure complète', 'Le casque inclus', 5, 60, NULL, NULL, 2, 5),
-(5, 'Costume de gueux', 'Set complet pour se déguiser en gueux', 5, 20, NULL, NULL, 1, 2),
+(4, 'Armure complète', 'Le casque inclus', 5, 60, NULL, 'armure.jpg', 2, 5),
+(5, 'Costume de gueux', 'Set complet pour se déguiser en gueux', 5, 20, NULL, '01510-bl09-wolltunika-lodin-rot-1.jpg', 1, 2),
 (6, 'Robe', 'Robe de princesse de Super Royaume', 2, 99, NULL, 'robe super royaume.png', 1, 1),
 (7, 'Harpe', 'Harpe de troubadour', 5, 400, NULL, NULL, 3, NULL),
 (8, 'Anneau', 'Anneau avec des diamants et des rubis', 2, 500, NULL, NULL, 4, NULL),
