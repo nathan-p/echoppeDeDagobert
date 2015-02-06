@@ -141,6 +141,9 @@ function cancelEditAdresse() {
     $("#adress-edit").css("display","none");
     $("#compte-edit-button").css("cursor","pointer");
     $("#compte-edit-button").css("color","#811512");
+    $("#compte-edit-button").attr( "data-toggle","tooltip" );
+    $("#compte-edit-button").attr( "data-placement","top" );
+    $("#compte-edit-button").attr( "data-original-title","Modifier mon compte" );
 }
 
 function detailFacture() {
@@ -154,4 +157,17 @@ function accountEdit() {
     $("#adress-consult").css("display","none");
     $("#compte-edit-button").css("cursor","auto");
     $("#compte-edit-button").css("color","gray");
+    $("#compte-edit-button").removeAttr( "data-toggle" );
+    $("#compte-edit-button").removeAttr( "data-placement" );
+    $("#compte-edit-button").removeAttr( "data-original-title" );
+}
+
+
+/************************************************/
+/********Fonctions pour la page de panier********/
+/************************************************/
+
+
+function deleteLineFromCart(lineNumber) {
+    alert("Suppression du produit numéro "+lineNumber+" dans le panier");
 }

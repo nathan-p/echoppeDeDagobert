@@ -11,7 +11,7 @@
 	margin-left: auto;
 }
 
-h1,h2,h3 {
+h1,h2 {
 	margin-left: 5%;
 }
 
@@ -218,7 +218,20 @@ footer a:hover {
 	border-width: 2px;
 }
 
+/*
+*********************************************************
+****************  PAGE Categorie ************************
+*********************************************************
+*/
 
+.btn btn-default a {
+    font-weight: bold;
+}
+
+.product-list .photoObjet img {
+    width: 270px;
+    height: 270px;
+}
 
 /*
 *********************************************************
@@ -227,15 +240,15 @@ footer a:hover {
 */
 
 .content {
-    padding: 1em;
+    padding: 5em 1em 1em 1em;
 }
 
 .content-heading {
-    background-color: lightgray;
+    background-color: none;
 }
 
 .menu-panier {
-    background-color: lightgray;
+    background-color: none;
 }
 
 .menu-panier li {

@@ -12,9 +12,7 @@
 <div class="container">
 	<div class="row">
 
-		<h1>Resultat de votre recherche</h1>
-		<br><br>
-		<div class="list-group">
+		
 			
 		<?php 
 			if(isset($_GET['search'])) {
@@ -26,6 +24,10 @@
 				$result = Database::getAllData($req);
 
 				$i = 0;
+
+				echo '<h1>Resultats pour la recherche "'.$search.'"</h1>
+				<br><br>
+				<div class="list-group">';
 
 				foreach ($result as $key => $value) {
 					echo '

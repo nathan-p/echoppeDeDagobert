@@ -1,13 +1,20 @@
 <?php 
-	session_start();
+	if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 
 	$connected = 0;
-	if(isset($_SESSION['connected'])) {
-		if($_SESSION['connected'] == 0) {
-			$connected = 0;
-		} else {
-			$connected = 1;
-		}
+	if(isset($_SESSION['user'])) {
+		$connected = 1;
+	} 
+
+
+	if(isset($_SESSION['cart'])) {
+		$cart = "(".count($_SESSION['cart'])." articles)";
+	}
+	else {
+		$cart = "(vide)";
 	}
  ?>
 
@@ -35,7 +42,7 @@
 				<?php 
 				if($connected) {
 					echo '<a href="./compte.php" style="margin-right:20px;">Mon compte</a>';
-					echo '<a href="./connect.php?connect=false" style="margin-right:20px;">Déconnexion</a>';
+					echo '<a href="../utils/connect.php?connect=false" style="margin-right:20px;">Déconnexion</a>';
 				} 
 				else {
 					echo '<a href="./loginPage.php" style="margin-right:20px;">Connexion</a>';
@@ -74,7 +81,7 @@
 			<div class="col-md-3 col-md-offset-1 header-center">
 				<button type="button" class="btn btn-lg btn-default" onclick="location.href='panier.php'" >
 					<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-					&nbsp;&nbsp;&nbsp;Panier (vide)&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;Panier <?php echo $cart; ?>&nbsp;&nbsp;&nbsp;
 
 				</button>
 			</div>
@@ -87,12 +94,12 @@
 					<ul class="nav navbar-nav">
 						<!-- MENU ITEM COSTUMES -->
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Costumes <span class="caret"></span></a>
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Costumes<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Pour femme</a></li>
-								<li><a href="#">Pour homme</a></li>
+								<li><a href='categorie.php?categorie=Pour_femme'>Pour femme</a></li>
+								<li><a href="categorie.php?categorie=Pour_homme">Pour homme</a></li>
 								<li class="divider"></li>
-								<li><a href="#">Chaussures</a></li>
+								<li><a href="categorie.php?categorie=Chaussures">Chaussures</a></li>
 							</ul>
 						</li>
 
@@ -100,22 +107,22 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Armes <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Armes</a></li>
-								<li><a href="#">Armures</a></li>
+								<li><a href="categorie.php?categorie=Armes">Armes</a></li>
+								<li><a href="categorie.php?categorie=Armures">Armures</a></li>
 								<li class="divider"></li>
-								<li><a href="#">Instruments de torture</a></li>
+								<li><a href="categorie.php?categorie=Instruments_de_torture">Instruments de torture</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Instruments</a></li>
-						<li><a href="#">Bijoux</a></li>
+						<li><a href="categorie.php?categorie=Instruments">Instruments</a></li>
+						<li><a href="categorie.php?categorie=Bijoux">Bijoux</a></li>
 
 
 						<!-- MENU ITEM MOBILIER -->
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mobilier & autres <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Mobilier</a></li>
-								<li><a href="#">Campement</a></li>
+								<li><a href="categorie.php?categorie=Mobilier">Mobilier</a></li>
+								<li><a href="categorie.php?categorie=Campement">Campement</a></li>
 							</ul>
 						</li>
 
@@ -123,10 +130,10 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Alimentation <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Viandes</a></li>
-								<li><a href="#">Fruits et légumes bio</a></li>
+								<li><a href="categorie.php?categorie=Viandes">Viandes</a></li>
+								<li><a href="categorie.php?categorie=Fruits_et_légumes_bio">Fruits et légumes bio</a></li>
 								<li class="divider"></li>
-								<li><a href="#">Boissons</a></li>
+								<li><a href="categorie.php?categorie=Boissons">Boissons</a></li>
 							</ul>
 						</li>
 

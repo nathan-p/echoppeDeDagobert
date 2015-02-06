@@ -1,22 +1,27 @@
 <?php
-include("../includes/header.php");
-include("./myAccountFunctions.php");
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 
-$mail = $_SESSION['mail'];
-$id = getId($mail);
-$donnee = getAdress($id);
+    if(!isset($_SESSION['user'])) {
 
-$name = strtoupper($donnee['nomDestinataire']);
-$surname = $donnee['prenomDestinataire'];
-$streetName = $donnee['nomRue'];
-$postalCode = $donnee['codePostal'];
-$cityName = $donnee['ville'];
-$country = $donnee['pays'];
+        header('Location: ./loginPage.php');
+    }
 
-//Interoger bd pour demander nom, nb d'adresse, l'adresse, les factures etc...
+    include("../includes/header.php");
+    include("../model/User.php");
+
+    $user = unserialize($_SESSION['user']);
+
+    //Interoger bd pour demander nom, nb d'adresse, l'adresse, les factures etc...
 ?>
 
 <div class="content">
+    <ol style="margin-left:5%;" class="breadcrumb">
+        <li><a href="./home.php">Accueil</a></li>
+        <li class="active">Panier</li>
+    </ol>
     <div class="row">
         <div class="col-md-4 col-md-offset-1">
             <div class="TitleForm">
@@ -29,7 +34,7 @@ $country = $donnee['pays'];
                 <div class="row">
                     <div class="col-md-11 col-md-offset-1">
                         <legend>Adresse mail</legend>
-                        <label> <?php echo $mail; ?> </label>
+                        <label> <?php echo $user->getMail(); ?> </label>
                         <br>
                         <br>
                         <!-- Rajouter un champ dynamiquement au clic dans le formulaire password-->
@@ -39,14 +44,15 @@ $country = $donnee['pays'];
                     <br>
                     <br>
                     <div class="col-md-11 col-md-offset-1">
-                        <form class="form-horizontal" action='./updateAdress.php' id='editAdressForm' method='post' role="form">
+                        <form class="form-horizontal" action='../utils/updateAdress.php' id='editAdressForm' method='post' role="form">
                             <fieldset>
                                 <!-- Créer le formulaire avec les bon champs et modifier le sauvegarder pour pointer vers php-->
                                 <!-- Form Name -->
                                 <legend>
                                     Addresse de livraison 
                                     <div class="pull-right">
-                                        <span class="glyphicon glyphicon-edit" onclick="accountEdit();" id="compte-edit-button" aria-hidden="true"></span>
+                                        <span class="glyphicon glyphicon-edit" onclick="accountEdit();" id="compte-edit-button" 
+                                        aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Modifier mon compte"></span>
                                         <br>
                                     </div>
                                 </legend>
@@ -54,13 +60,12 @@ $country = $donnee['pays'];
 
                                     <!-- Text input-->
                                     <div class="form-group">
-                                        <input type='hidden' name='idUtilisateur' id='idUtilisateur' value='<?php echo $id ?>'/>
                                         <div class="col-sm-4">
                                             <p><b>Nom</b></p>
                                         </div>
 
                                         <div class="col-sm-8">
-                                            <p> <?php echo  $name." ".$surname  ?> </p>
+                                            <p> <?php echo  $user->getName() ." ".$user->getSurname()  ?> </p>
                                         </div>
                                     </div>
 
@@ -70,7 +75,7 @@ $country = $donnee['pays'];
                                             <p><b>Rue</b></p>
                                         </div>
                                         <div class="col-sm-8">
-                                            <p> <?php echo  $streetName ?> </p>
+                                            <p> <?php echo  $user->getStreet() ?> </p>
                                         </div>
                                     </div>
                                     <!-- Text input-->
@@ -79,7 +84,7 @@ $country = $donnee['pays'];
                                             <p><b>Ville</b></p>
                                         </div>
                                         <div class="col-sm-9">
-                                            <p> <?php echo  $postalCode.' '.$cityName ?> </p>
+                                            <p> <?php echo  $user->getPostalCode() .' '.$user->getCity() ?> </p>
                                         </div>
                                     </div>
                                     <!-- Text input-->
@@ -88,7 +93,7 @@ $country = $donnee['pays'];
                                             <p><b>Pays</b></p>
                                         </div>
                                         <div class="col-sm-8">
-                                            <p> <?php echo  $country ?> </p>
+                                            <p> <?php echo  $user->getCountry() ?> </p>
                                         </div>
                                     </div>
                                 </div>
@@ -98,35 +103,35 @@ $country = $donnee['pays'];
 
                                     <!-- Text input-->
                                     <div class="form-group">
-                                        <input type='hidden' name='idUtilisateur' id='idUtilisateur' value='<?php echo $id ?>'/>
+                                        <input type='hidden' name='idUtilisateur' id='idUtilisateur' value='<?php echo $user->getId(); ?>'/>
                                         <div class="col-sm-6">
-                                            <input type="text" name='nomDestinataire' placeholder="Nom" value=<?php echo  "'$name'" ?> class="form-control">
+                                            <input type="text" name='nomDestinataire' placeholder="Nom" value='<?php echo $user->getName(); ?> 'class="form-control">
                                         </div>
 
                                         <div class="col-sm-6">
-                                            <input type="text" name='prenomDestinataire' placeholder="Prénom" value= <?php echo "'$surname'" ?> class="form-control">
+                                            <input type="text" name='prenomDestinataire' placeholder="Prénom" value=' <?php echo $user->getSurname(); ?>' class="form-control">
                                         </div>
                                     </div>
 
                                     <!-- Text input-->
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <input type="text" name='nomRue' placeholder="Addresse" value=<?php echo  "'$streetName'" ?> class="form-control">
+                                            <input type="text" name='nomRue' placeholder="Addresse" value='<?php echo $user->getStreet(); ?>' class="form-control">
                                         </div>
                                     </div>
                                     <!-- Text input-->
                                     <div class="form-group">
                                         <div class="col-sm-4">
-                                            <input type="number" name='codePostal' pattern="^([0-9]{5})$" placeholder="CodePostal" value=<?php echo  "'$postalCode'" ?> class="form-control">
+                                            <input type="number" name='codePostal' pattern="^([0-9]{5})$" placeholder="CodePostal" value='<?php echo  $user->getPostalCode(); ?>' class="form-control">
                                         </div>
                                         <div class="col-sm-8">
-                                            <input type="text" name='ville' placeholder="Ville" value=<?php echo "'$cityName'" ?> class="form-control">
+                                            <input type="text" name='ville' placeholder="Ville" value='<?php echo $user->getCity(); ?>' class="form-control">
                                         </div>
                                     </div>
                                     <!-- Text input-->
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <input type="text" name='pays' placeholder="Pays" value= <?php echo  "'$country'" ?> class="form-control">
+                                            <input type="text" name='pays' placeholder="Pays" value=' <?php echo  $user->getCountry(); ?>' class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -173,7 +178,7 @@ $country = $donnee['pays'];
                         </tr>
                     </thead>
                     <!--insérer les factures via php--> 
-                    <?php getFactures($id); ?>                    
+                    <?php echo $user->getFacturesToHtml(); ?>                    
                 </table>
 
             </div>
