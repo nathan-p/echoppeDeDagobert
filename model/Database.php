@@ -43,7 +43,7 @@ class Database {
         $reponse = $bdd->query($req);
         return $reponse;
     }
- 
+    
 }
 
 ?>

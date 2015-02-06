@@ -5,9 +5,20 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php
+
+ if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+
+    if(!isset($_SESSION['user'])) {
+
+        header('Location: ./loginPage.php');
+    }
+    
 include_once("../model/Database.php");
 include("../includes/header.php");
-
+    
 $id = $_POST['id'];
 $date = $_POST['date'];
 $prixTotalFacture = 0;
@@ -43,7 +54,9 @@ function getArticlesInFacture($idFacture) {
 }
 
 function addLineArticle($nom, $description, $quantite, $prix, $urlImg) {
-    $urlImg = "http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png";
+    if($urlImg == null) {
+        $urlImg = "http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png";
+    }
     $prixTotal = $quantite * $prix;
     global $prixTotalFacture;
     $prixTotalFacture = $prixTotalFacture + $prixTotal;

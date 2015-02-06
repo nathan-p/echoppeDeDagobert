@@ -94,7 +94,7 @@ $_SESSION['cart'][2]['quantite'] = 2;
                     <strong><h4>Total <b style="color:#811512;"> <?php echo $total; ?> € </b></h4></strong>
                     <div><strong>Frais de livraison : GRATUIT ! </strong></div>
                 </td>
-                <td><a href="./pay.php" class="btn btn-success btn-block">Payer <i class="glyphicon glyphicon-chevron-right"></i></a></td>
+                <td><a href="./recapitulatifCommande.php" class="btn btn-success btn-block">Payer <i class="glyphicon glyphicon-chevron-right"></i></a></td>
             </tr>
         </tfoot>
     </table>
