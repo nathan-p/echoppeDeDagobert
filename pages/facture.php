@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <?php
 include_once("../model/Database.php");
-include("header.php");
+include("../includes/header.php");
 
 $id = $_POST['id'];
 $date = $_POST['date'];
@@ -68,9 +68,11 @@ function addLineArticle($nom, $description, $quantite, $prix, $urlImg) {
 
 
 <div class="container">
-    <?php getFactureInfo(); ?>
+    <div class="col-md-12">
+        <?php getFactureInfo(); ?>
+    </div>
     <div class="row">
-        <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <div class="col-sm-12 col-md-11 col-md-offset-1">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -116,6 +118,4 @@ function addLineArticle($nom, $description, $quantite, $prix, $urlImg) {
         </div>
     </div>
 </div>
-</div>
-
 <?php include("../includes/footer.php"); ?>
