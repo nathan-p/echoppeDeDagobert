@@ -9,21 +9,21 @@ $categorie = $_GET["categorie"];
 // donc ici tous les '_' par des espaces.
 // Problème sinon dans les $_GET avec les espaces remplacés par '%20'
 $categorie = str_replace("_", " ", $categorie);
-
 $objets = ObjetManager::getObjets($categorie);
+
 $html = '<ul style="list-style: none">';
 foreach ($objets as $objet) {
     $desc = $objet->getDescription();
     // limiter la description à 150 caractères
     if (mb_strlen($desc) > 147) {
-        $desc = mb_strimwidth($desc, 0, 147).'...';
+        $desc = rtrim(mb_strimwidth($desc, 0, 147))."...";
     }
     $prix = "";
     if (!is_null($objet->getPromotions())) {
         $prix = '<div><span style="text-decoration:line-through"> ' . $objet->getPrix() . '€</span>';
-        $prix .= '   -'.$objet->getPromotions().'% <br>'.($objet->getPrix()*$objet->getPromotions()/100).'€</div>';
+        $prix .= '   -'.$objet->getPromotions().'% <br>'.($objet->getPrix()*(1-($objet->getPromotions()/100))).'€</div>';
     } else {
-        $prix = '<span> ' . $objet->getPrix() . '€</span>';
+        $prix = '<span> ' . $objet->getPrix() . '€</span><br>';
     }
     $html = $html
         . '<div class="col-md-4">'
