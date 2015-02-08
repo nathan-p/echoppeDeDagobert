@@ -139,7 +139,7 @@ INSERT INTO `objet` (`idObjet`, `nom`, `description`, `stock`, `prix`, `promotio
 (3, 'Pain de campagne', 'Pain de campagne fait maison', 52, 0.81, NULL, 'pain_campagne.jpg', 6, NULL),
 (17, 'Pain aux olives', 'Un pain fait à partir de farine biologique, avec des olives ! Miam', 52, 1.25, NULL, 'pain_campagne.jpg', 6, NULL),
 (18, 'Pain aux céréales', 'Pain de campagne à base de blé, seigle, froment...', 52, 1.10, NULL, 'pain_campagne.jpg', 6, NULL),
-(19, 'Carottes bio', '1kg de Carottes bio, avec supplément terreau', 70, 1.05, NULL, 'carotte.jpg', 6, 10),
+(19, 'Carottes bio', '1kg de Carottes bio, avec supplément terreau', 70, 1.05, NULL, 'carottes.jpg', 6, 10),
 (20, 'Navets bio', '1kg de navets du jardin', 72, 1, 5, 'navet.jpg', 6, 10),
 (4, 'Armure complète', 'Le casque inclus', 5, 1500, NULL, 'armure.jpg', 2, 5),
 (21, 'Armure de piquier de la renaissance', 'Les armures de cette époque sont caractérisées par un plastron busqué, mais aussi d''imposantes tassettes pour couvrir le haut des cuisses', 3, 1800, 5, 'armure_de_piquier.jpg', 2, 5),

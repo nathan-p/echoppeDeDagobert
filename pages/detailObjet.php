@@ -9,6 +9,16 @@ $idObjet = $_GET["idObjet"];
 $objet = ObjetManager::getObjet($idObjet);
 $quantite = 1;
 
+$prix = "";
+if (!is_null($objet->getPromotions())) {
+    $prix = '<div>'
+                . '<span style="text-decoration:line-through"> ' . $objet->getPrix() . '€</span> -' . $objet->getPromotions() . '% <br>'
+                . $objet->getPrixReel() . ' €'
+            . '</div>';
+} else {
+    $prix = '<span> ' . $objet->getPrix() . ' €</span>';
+}
+
 $html = '<div class="col-md-3">'
             . '<div class="photoObjet">'
                 . '<img src="../img/' . $objet->getUrlImage() . '" class="img-thumbnail">'
@@ -21,10 +31,10 @@ $html = '<div class="col-md-3">'
         . '</div>'
         . '<div class="col-md-3" style="border: 1px solid #CCC; background-color: #EEEEEE; min-height: 350px; border-radius: 4px;">'
             . '<form action="panier.php" id="ajouterPanier" method="post" role="form">'
-                . '<h2>' . $objet->getPrix() . ' €</h2>'
+                . '<h2>' . $prix . '</h2>'
                 . '<input type="hidden" name="idObjet" value="' . $objet->getIdObjet() . '"/>'
                 . '<p>Quantité :</p>'
-                . '<input type="number" name="quantite" value="1" min="1" width="5px" style="width: 50px; padding-left: 7px"/>'
+                . '<input type="number" name="quantite" value="1" min="1" max="' . $objet->getStock() . '" style="width: 50px; padding-left: 7px;"/>'
                 . '<img src="../img/payment-logo.png">'
                     . '<button type="submit" class="btn btn-default">Ajouter au panier</button>'
             . '</form>'
