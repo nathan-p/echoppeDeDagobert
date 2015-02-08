@@ -263,13 +263,19 @@ function getQuantite(lineNumber) {
 function updateSousTotal(lineNumber) {
     var cartElements = document.getElementsByName('cart-subtotal-price');
     var i;
-    for (i = 0; i < cartElements.length; i++) {
-    }
+    var quantite;
     for (i = 0; i < cartElements.length; i++) {
         if(i === lineNumber) {
-            cartElements[i].innerHTML = getPrixReel(lineNumber) * getQuantite(lineNumber) + '€';
+            quantite = getQuantite(lineNumber);
+            cartElements[i].innerHTML = getPrixReel(lineNumber) * quantite + '€';
         }
     }
+    
+    // Update php SESSION with a request
+    var xhr = new_xhr();
+    xhr.open("GET", "panier.php?quantiteIdObjet=" + lineNumber + "&quantiteObjet=" + quantite, true);
+    xhr.send();
+    
     updateCartTotalPrice();
     updateCartNumber();
 }

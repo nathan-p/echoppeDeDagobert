@@ -10,7 +10,10 @@ include_once("../model/ObjetManager.php");
 include_once("../model/Objet.php");
 
 function addToCart($idObjet, $quantite) {
-    $nbProd = count($_SESSION['cart']);
+    $nbProd = 0;
+    if (isset($_SESSION['cart'])) {
+        $nbProd = count($_SESSION['cart']);
+    }
     
     $exist = false;
     for($i = 0 ; $i < $nbProd ; $i++) {
@@ -36,39 +39,45 @@ if (isset($_GET['rmIdObjet'])) {
     $_SESSION['cart'] = array_values($_SESSION['cart']);
 }
 
+if (isset($_GET['quantiteIdObjet']) && isset($_GET['quantiteObjet'])) {
+    $_SESSION['cart'][$_GET['quantiteIdObjet']]['quantite'] = $_GET['quantiteObjet'];
+}
+
 $cartContent = "";
 $total = 0;
-for ($i=0; $i < count($_SESSION['cart']); $i++) { 
+if (isset($_SESSION['cart'])) {
+    for ($i=0; $i < count($_SESSION['cart']); $i++) { 
 
-    $idProd = $_SESSION['cart'][$i]['id'];
-    $product = ObjetManager::getObjet($idProd);
-    $quantite = $_SESSION['cart'][$i]['quantite'];
-    $sousTotal = $product->getPrixReel() * $quantite;
+        $idProd = $_SESSION['cart'][$i]['id'];
+        $product = ObjetManager::getObjet($idProd);
+        $quantite = $_SESSION['cart'][$i]['quantite'];
+        $sousTotal = $product->getPrixReel() * $quantite;
 
-    $cartContent .= 
-    '<tr name="ligneDuPanier" id="lignePanier' . $i . '">
-        <td data-th="Product">
-            <div class="row">
-                <div class="col-sm-2 hidden-xs"><img src="../img/' .$product->getUrlImage() . '" alt="..." class="img-responsive" style="max-height: 100px"/></div>
-                <div class="col-sm-10">
-                    <h4 class="nomargin">'.$product->getNom().'</h4>
-                    <p>'.$product->getDescription().'</p>
+        $cartContent .= 
+        '<tr name="ligneDuPanier" id="lignePanier' . $i . '">
+            <td data-th="Product">
+                <div class="row">
+                    <div class="col-sm-2 hidden-xs"><img src="../img/' .$product->getUrlImage() . '" alt="..." class="img-responsive" style="max-height: 100px"/></div>
+                    <div class="col-sm-10">
+                        <h4 class="nomargin">'.$product->getNom().'</h4>
+                        <p>'.$product->getDescription().'</p>
+                    </div>
                 </div>
-            </div>
-        </td>
-        <td data-th="Price" name="prixReelObjetPanier">'.$product->getPrixReel().' €</td>
-        <td data-th="Quantity">
-            <input type="number" class="form-control text-center" value="'.$quantite.'" min="1" max="' . $product->getStock() . '" name="quantiteObjet" onChange="updateSousTotal(' . $i . ')" >
-        </td>
-        <td data-th="Subtotal" id="cart-subtotal-price" name="cart-subtotal-price" class="text-center">'.$sousTotal.'€</td>
-        <td class="actions" data-th="">
-            <button class="btn btn-danger btn-sm" id="cart-delete" name="cartDeleteBtn" onClick="deleteLineFromCart('.$i.')">
-                <i class="glyphicon glyphicon-trash"></i>
-            </button>                                
-        </td>
-    </tr>';   
+            </td>
+            <td data-th="Price" name="prixReelObjetPanier">'.$product->getPrixReel().' €</td>
+            <td data-th="Quantity">
+                <input type="number" class="form-control text-center" value="'.$quantite.'" min="1" max="' . $product->getStock() . '" name="quantiteObjet" onChange="updateSousTotal(' . $i . ')" >
+            </td>
+            <td data-th="Subtotal" id="cart-subtotal-price" name="cart-subtotal-price" class="text-center">'.$sousTotal.'€</td>
+            <td class="actions" data-th="">
+                <button class="btn btn-danger btn-sm" id="cart-delete" name="cartDeleteBtn" onClick="deleteLineFromCart('.$i.')">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </button>                                
+            </td>
+        </tr>';   
 
-    $total +=$sousTotal;      
+        $total +=$sousTotal;      
+    }
 }
 
 ?>
