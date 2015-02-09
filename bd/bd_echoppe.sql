@@ -26,6 +26,14 @@ SET time_zone = "+00:00";
 -- Structure de la table `adresse`
 --
 
+drop table if exists adresse;
+drop table if exists souscategorie;
+drop table if exists objet_has_facture;
+drop table if exists objet;
+drop table if exists categorie;
+drop table if exists facture;
+drop table if exists utilisateur;
+
 CREATE TABLE IF NOT EXISTS `adresse` (
   `idadresse` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nomRue` varchar(45) DEFAULT NULL,
