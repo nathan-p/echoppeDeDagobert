@@ -167,7 +167,127 @@ function accountEdit() {
 /********Fonctions pour la page de panier********/
 /************************************************/
 
+// Fonction de definition de l'object xhr
+function new_xhr(){
+	var xhr_object = null;
+	if(window.XMLHttpRequest) // Firefox et autres
+	   xhr_object = new XMLHttpRequest();
+	else if(window.ActiveXObject){ // Internet Explorer
+	   try {
+                xhr_object = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                xhr_object = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+	}
+	else { // XMLHttpRequest non supporté par le navigateur
+	   alert("Votre navigateur ne supporte pas les objets XMLHTTPRequest...");
+	   xhr_object = false;
+	}
+	return xhr_object;
+}
+// Fonction qui va modifier la variable de session
+function change_var(rmIdObjet) {
+	var xhr = new_xhr();
+	xhr.open("GET", "panier.php?rmIdObjet="+rmIdObjet, true);
+	xhr.send();
+}
 
 function deleteLineFromCart(lineNumber) {
-    alert("Suppression du produit numéro "+lineNumber+" dans le panier");
+    change_var(lineNumber);
+    var elem = document.getElementById('lignePanier' + lineNumber);
+    elem.parentNode.removeChild(elem);
+    
+    updateCartTotalPrice();
+    updateCartNumber();
+    updateCartElementId();
+    updateCartDeleteOnClick();
+    updateCartDeleteOnClick();
+}
+
+function updateCartTotalPrice() {
+    var cartElements = document.getElementsByName('cart-subtotal-price');
+    var i;
+    var totalPrice = 0;
+    for (i = 0; i < cartElements.length; i++) {
+        totalPrice += parseFloat(cartElements[i].innerHTML);
+    }
+    totalPrice = totalPrice.toFixed(2);
+    document.getElementById('prixTotalPanier').innerHTML = totalPrice;
+}
+
+function updateCartNumber() {
+    var cartElements = document.getElementsByName('quantiteObjet');
+    var i;
+    var cartNumber = 0;
+    for (i = 0; i < cartElements.length; i++) {
+        cartNumber += parseInt(cartElements[i].value);
+    }
+    document.getElementById('nbObjetsPanier').innerHTML = '(' + cartNumber + ' articles)';
+}
+
+function updateCartElementId() {
+    var cartElements = document.getElementsByName('ligneDuPanier');
+    var i;
+    for (i = 0; i < cartElements.length; i++) {
+        cartElements[i].id = 'lignePanier' + i;
+    }
+}
+
+function updateCartDeleteOnClick() {
+    var cartElements = document.getElementsByName('cartDeleteBtn');
+    var i;
+    for (i = 0; i < cartElements.length; i++) {
+        cartElements[i].setAttribute('onClick', 'deleteLineFromCart(' + i + ')');
+    }
+}
+
+function updateCartDeleteOnClick() {
+    var cartElements = document.getElementsByName('quantiteObjet');
+    var i;
+    for (i = 0; i < cartElements.length; i++) {
+        cartElements[i].setAttribute('onChange', 'updateSousTotal(' + i + ')');
+    }
+}
+
+function getPrixReel(lineNumber) {
+    var cartElements = document.getElementsByName('prixReelObjetPanier');
+    var i;
+    for (i = 0; i < cartElements.length; i++) {
+        if(i === lineNumber) {
+            return parseFloat(cartElements[i].innerHTML);
+        }
+    }
+}
+
+function getQuantite(lineNumber) {
+    var cartElements = document.getElementsByName('quantiteObjet');
+    var i;
+    for (i = 0; i < cartElements.length; i++) {
+        if(i === lineNumber) {
+            return cartElements[i].value;
+        }
+    }
+}
+
+function updateSousTotal(lineNumber) {
+    var cartElements = document.getElementsByName('cart-subtotal-price');
+    var i;
+    var quantite;
+    var sousQuantite;
+    for (i = 0; i < cartElements.length; i++) {
+        if(i === lineNumber) {
+            quantite = getQuantite(lineNumber);
+            sousQuantite = getPrixReel(lineNumber) * quantite;
+            sousQuantite = sousQuantite.toFixed(2);
+            cartElements[i].innerHTML = sousQuantite + ' €';
+        }
+    }
+    
+    // Update php SESSION with a request
+    var xhr = new_xhr();
+    xhr.open("GET", "panier.php?quantiteIdObjet=" + lineNumber + "&quantiteObjet=" + quantite, true);
+    xhr.send();
+    
+    updateCartTotalPrice();
+    updateCartNumber();
 }

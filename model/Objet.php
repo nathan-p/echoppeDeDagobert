@@ -190,7 +190,7 @@ class Objet {
 	}
 	
 	public function getPrixReel() {
-		return $this->prix * (1-($this->promotion / 100));
+		return $this->prix * (1-($this->promotions / 100));
 	}
 
 }

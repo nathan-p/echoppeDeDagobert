@@ -34,6 +34,7 @@
         <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="../js/bootstrap.js"></script>
         <script type='text/javascript' src='../js/utilsFunctions.js'></script>
+        
     </head>
 
     <body>
@@ -81,8 +82,7 @@ if ($connected) {
                 <div class="col-md-3 col-md-offset-1 header-center">
                     <button type="button" class="btn btn-lg btn-default" onclick="location.href = 'panier.php'" >
                         <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                        &nbsp;&nbsp;&nbsp;Panier <?php echo $cart; ?>&nbsp;&nbsp;&nbsp;
-
+                        &nbsp;&nbsp;&nbsp;Panier <span id="nbObjetsPanier"><?php echo $cart; ?></span>&nbsp;&nbsp;&nbsp;
                     </button>
                 </div>
             </div>
