@@ -7,29 +7,39 @@ include_once("../model/Objet.php");
 $idObjet = $_GET["idObjet"];
     
 $objet = ObjetManager::getObjet($idObjet);
-$html = '<div class="col-md-4" style="border: 1px solid #999999; padding-bottom: 1em; min-height: 350px">'
-            . '<h2>' . $objet->getNom() . '</h2>'
+$quantite = 1;
+
+$prix = "";
+if (!is_null($objet->getPromotions())) {
+    $prix = '<div>'
+                . '<span style="text-decoration:line-through"> ' . $objet->getPrix() . '€</span> -' . $objet->getPromotions() . '% <br>'
+                . $objet->getPrixReel() . ' €'
+            . '</div>';
+} else {
+    $prix = '<span> ' . $objet->getPrix() . ' €</span>';
+}
+
+$html = '<div class="col-md-3">'
             . '<div class="photoObjet">'
-                . '<img src="../img/' . $objet->getUrlImage() . '">'
+                . '<img src="../img/' . $objet->getUrlImage() . '" class="img-thumbnail">'
             . '</div>'
         . '</div>'
-        . '<div class="col-md-5">'
-            . '<h2>Description</h2>'
-            . $objet->getDescription()
+        . '<div class="col-md-6">'
+            . '<h2>' . $objet->getNom() . '</h2>'
+            . '<p>' . $objet->getDescription() . '</p>'
+            . '<p>Article(s) disponible(s) : ' . $objet->getStock() . '</p>'
         . '</div>'
-        . '<div class="col-md-3" style="border: 1px solid #999999; background-color: #EEEEEE; min-height: 350px">'
-        . '<h2>' . $objet->getPrix() . ' €</h2>'
-        . '<img src="../img/payment-logo.png">'
-            . '<a class="btn btn-default" href="./panier.php" style="color: white"> '
-                . 'Acheter'
-            . '</a>'
-        . '</div>'
-        ;
+        . '<div class="col-md-3" style="border: 1px solid #CCC; background-color: #EEEEEE; min-height: 350px; border-radius: 4px;">'
+            . '<form action="panier.php" id="ajouterPanier" method="post" role="form">'
+                . '<h2>' . $prix . '</h2>'
+                . '<input type="hidden" name="idObjet" value="' . $objet->getIdObjet() . '"/>'
+                . '<p>Quantité :</p>'
+                . '<input type="number" name="quantite" value="1" min="1" max="' . $objet->getStock() . '" style="width: 50px; padding-left: 7px;"/>'
+                . '<img src="../img/payment-logo.png">'
+                    . '<button type="submit" class="btn btn-default">Ajouter au panier</button>'
+            . '</form>'
+        . '</div>';
 $html = $html.'</ul>';
-
-function addToCart($idObjet, $quantite) {
-    
-}
 
 ?>
     
