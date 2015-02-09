@@ -23,7 +23,7 @@ foreach ($objets as $objet) {
         $prix = '<div><span style="text-decoration:line-through"> ' . $objet->getPrix() . '€</span>';
         $prix .= '   -'.$objet->getPromotions().'% <br>'.($objet->getPrix()*(1-($objet->getPromotions()/100))).'€</div>';
     } else {
-        $prix = '<span> ' . $objet->getPrix() . '€</span><br>';
+        $prix = '<br><span> ' . $objet->getPrix() . '€</span><br>';
     }
     $html = $html
         . '<div class="col-md-4">'
@@ -34,18 +34,22 @@ foreach ($objets as $objet) {
                     . '</div>'
                 .  '</li>'
                 . '<li><h2>' . $objet->getNom() . '</h2></li>'
-                . '<li style="height:60px">' . $desc . ' </li>'
+                . '<li style="min-height:80px">' . $desc . ' </li>'
                 . '<li>'
-                    .$prix
-
-                    . '<a href="./detailObjet.php?idObjet=' . $objet->getIdObjet() . '" style="color: white"> '
+                    . $prix.'<br>'
+                    . '<form action="panier.php" id="ajouterPanier" method="post" role="form" class="pull-left">'
+                        . '<input type="hidden" name="idObjet" value="' . $objet->getIdObjet() . '"/>'
+                        . '<input type="hidden" name="quantite" value="1"/>'
+                        . '<button type="submit" class="btn btn-default">Ajouter au panier</button>'
+                    . '</form>'
+                    . '<a href="./detailObjet.php?idObjet=' . $objet->getIdObjet() . '" style="color: white">'
                         . '<div class="btn btn-default pull-right">'
                             . 'Détails'
                         . '</div>'
                     . '</a>'
                 . '</li>'
-                . '</div>'
-                . '</div>';
+            . '</div>'
+        . '</div>';
 }
 $html = $html.'</ul>';
 ?>
