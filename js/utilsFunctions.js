@@ -201,6 +201,7 @@ function deleteLineFromCart(lineNumber) {
     updateCartNumber();
     updateCartElementId();
     updateCartDeleteOnClick();
+    updateQuantityOnClick();
 }
 
 function updateCartTotalPrice() {
@@ -240,6 +241,14 @@ function updateCartDeleteOnClick() {
     }
 }
 
+function updateQuantityOnClick() {
+    var cartElements = document.getElementsByName('quantiteObjet');
+    var i;
+    for (i = 0; i < cartElements.length; i++) {
+        cartElements[i].setAttribute('onChange', 'updateSousTotal(' + i + ')');
+    }
+}
+
 function getPrixReel(lineNumber) {
     var cartElements = document.getElementsByName('prixReelObjetPanier');
     var i;
@@ -264,10 +273,13 @@ function updateSousTotal(lineNumber) {
     var cartElements = document.getElementsByName('cart-subtotal-price');
     var i;
     var quantite;
+    var sousQuantite;
     for (i = 0; i < cartElements.length; i++) {
         if(i === lineNumber) {
             quantite = getQuantite(lineNumber);
-            cartElements[i].innerHTML = getPrixReel(lineNumber) * quantite + '€';
+            sousQuantite = getPrixReel(lineNumber) * quantite;
+            sousQuantite = sousQuantite.toFixed(2);
+            cartElements[i].innerHTML = sousQuantite + ' €';
         }
     }
     
