@@ -52,7 +52,7 @@ if (isset($_SESSION['cart'])) {
         $product = ObjetManager::getObjet($idProd);
         $quantite = $_SESSION['cart'][$i]['quantite'];
         $sousTotal = $product->getPrixReel() * $quantite;
-
+        
         $cartContent .= 
         '<tr name="ligneDuPanier" id="lignePanier' . $i . '">
             <td data-th="Product">
@@ -78,6 +78,7 @@ if (isset($_SESSION['cart'])) {
 
         $total +=$sousTotal;      
     }
+    $_SESSION['total'] = $total;        
 }
 
 ?>
@@ -115,7 +116,7 @@ if (isset($_SESSION['cart'])) {
                     <strong><h4>Total <b id="prixTotalPanier" style="color:#811512;"> <?php echo $total; ?> € </b></h4></strong>
                     <div><strong>Frais de livraison : GRATUIT ! </strong></div>
                 </td>
-                <td><a href="./pay.php" class="btn btn-success btn-block">Payer <i class="glyphicon glyphicon-chevron-right"></i></a></td>
+                <td><a href="./recapitulatifCommande.php" class="btn btn-success btn-block">Payer <i class="glyphicon glyphicon-chevron-right"></i></a></td>
             </tr>
         </tfoot>
     </table>
