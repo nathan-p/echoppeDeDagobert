@@ -201,7 +201,7 @@ function deleteLineFromCart(lineNumber) {
     updateCartNumber();
     updateCartElementId();
     updateCartDeleteOnClick();
-    updateCartDeleteOnClick();
+    updateQuantityOnClick();
 }
 
 function updateCartTotalPrice() {
@@ -241,7 +241,7 @@ function updateCartDeleteOnClick() {
     }
 }
 
-function updateCartDeleteOnClick() {
+function updateQuantityOnClick() {
     var cartElements = document.getElementsByName('quantiteObjet');
     var i;
     for (i = 0; i < cartElements.length; i++) {
