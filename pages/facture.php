@@ -45,17 +45,19 @@ function getArticlesInFacture($idFacture) {
         $nom = $ligne['nom'];
         $description = $ligne['description'];
         $prix = $ligne['prix'];
-        $urlImg = $ligne['urlImage'];
+        $nomImg = $ligne['urlImage'];
 
-        addLineArticle($nom, $description, $quantite, $prix, $urlImg);
+        addLineArticle($nom, $description, $quantite, $prix, $nomImg);
         $ligne = $donnee->fetch();
     }
     $donnee->closeCursor();
 }
 
-function addLineArticle($nom, $description, $quantite, $prix, $urlImg) {
-    if($urlImg == null) {
+function addLineArticle($nom, $description, $quantite, $prix, $nomImg) {
+    if($nomImg == null) {
         $urlImg = "http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png";
+    } else {        
+        $urlImg = "../img/" . $nomImg;
     }
     $prixTotal = $quantite * $prix;
     global $prixTotalFacture;
