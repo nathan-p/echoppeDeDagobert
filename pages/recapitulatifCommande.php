@@ -17,8 +17,13 @@ if (!isset($_SESSION)) {
 if (!isset($_SESSION['user'])) {
     header('Location: ./loginPage.php');
 }
+
+
 $user = unserialize($_SESSION['user']);
+
+
 if (isset($_SESSION['cart'])) {
+
     $nbProd = count($_SESSION['cart']);
     $prixTotal = $_SESSION['total'];
     $idFacture = creerFacture();
@@ -70,13 +75,28 @@ function getFactureInfo() {
     . '<h3> Commande passée le ' . $date . ' </h3>';
 }
 
+
+function sendMail() {
+     global $user;
+     ini_set('SMTP','smtp.topnet.fr'); 
+     $to      = $user->getMail();
+     $subject = 'Commande site Echoppe Dagobert';
+     $message = 'Bonjour, '."\r\n".'Votre commande à bien été prise en compte';
+     $headers = 'From: commande@echoppeDagobert.com' . "\r\n" .
+     'Reply-To: commande@echoppeDagobert.com' . "\r\n" .
+     'X-Mailer: PHP/' . phpversion();
+
+     mail($to, $subject, $message, $headers);
+}
+
+
 function getFeedbackFacture($factureCree) {
 
     if ($factureCree) {
         global $idFacture;
         $date = date("Y-m-d");
         echo '<div class="alert alert-success" style="margin-left:5%;" role="alert">
-                Votre commande à bien été reçue ! 
+                Votre commande à bien été reçue ! Vous avez reçu un mail récapitulatif de votre commande
                 <br>
                 Vous recevrez votre commande d\'ici quelques jours.
             </div>';
@@ -117,7 +137,11 @@ function getFeedbackFacture($factureCree) {
                 <li><a href="./panier.php">Panier</a></li>
                 <li class="active">Récapitulatif de la commande</li>
             </ol>
-            <?php getFeedbackFacture($factureCree); ?>            
+            <?php 
+                sendMail();
+                getFeedbackFacture($factureCree);
+
+             ?>            
         </div>
     </div>
 </div>
