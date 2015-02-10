@@ -1,5 +1,5 @@
 <?php
-	include("./model/Database.php");
+	include("../model/Database.php");
 	$mail = $_GET['mail'];
 	//    echo $mail;
 	$bdd = new Database();

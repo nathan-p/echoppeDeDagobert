@@ -78,10 +78,10 @@ function getFactureInfo() {
 
 function sendMail() {
      global $user;
-     ini_set('SMTP','smtp.topnet.fr'); 
+     //ini_set('SMTP','localhost'); 
      $to      = $user->getMail();
      $subject = 'Commande site Echoppe Dagobert';
-     $message = 'Bonjour, '."\r\n".'Votre commande à bien été prise en compte';
+     $message = 'Bonjour, '."\r\n".'Votre commande à bien été prise en compte. Connectez vous sur l\'echoppe de Dagobert pour consulter votre facture.';
      $headers = 'From: commande@echoppeDagobert.com' . "\r\n" .
      'Reply-To: commande@echoppeDagobert.com' . "\r\n" .
      'X-Mailer: PHP/' . phpversion();

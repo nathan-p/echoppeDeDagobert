@@ -56,7 +56,7 @@ function checkMail() {
     } else {
         $.ajax({
             type: "GET",
-            url: "checkMail.php",
+            url: "../utils/checkMail.php",
             data: {mail: mailInput}
         }).done(function (isOk) {
             checkSignIn(isOk, mailInput);
