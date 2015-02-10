@@ -97,8 +97,8 @@ if ($connected) {
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Costumes<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href='categorie.php?categorie=Pour_femme'>Pour femme</a></li>
-                                    <li><a href="categorie.php?categorie=Pour_homme">Pour homme</a></li>
+                                    <li><a href='categorie.php?categorie=Costume_pour_femme'>Pour femme</a></li>
+                                    <li><a href="categorie.php?categorie=Costume_pour_homme">Pour homme</a></li>
                                     <li class="divider"></li>
                                     <li><a href="categorie.php?categorie=Chaussures">Chaussures</a></li>
                                 </ul>

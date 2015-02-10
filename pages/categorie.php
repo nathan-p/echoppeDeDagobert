@@ -34,9 +34,9 @@ foreach ($objets as $objet) {
                     . '</div>'
                 .  '</li>'
                 . '<li><h2>' . $objet->getNom() . '</h2></li>'
-                . '<li style="min-height:80px">' . $desc . ' </li>'
-                . '<li>'
-                    . $prix.'<br>'
+                . '<li style="min-height:50px">' . $desc . ' </li>'
+                . '<li><div style="color:#811512;font-size: 20px;"><b>'
+                    .$prix.'</b></div><br>'
                     . '<form action="panier.php" id="ajouterPanier" method="post" role="form" class="pull-left">'
                         . '<input type="hidden" name="idObjet" value="' . $objet->getIdObjet() . '"/>'
                         . '<input type="hidden" name="quantite" value="1"/>'
@@ -51,7 +51,7 @@ foreach ($objets as $objet) {
             . '</div>'
         . '</div>';
 }
-$html = $html.'</ul>';
+$html = $html.'</ul><br><br>';
 ?>
     
 <div class="content">
