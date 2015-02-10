@@ -45,7 +45,7 @@ if (isset($_GET['quantiteIdObjet']) && isset($_GET['quantiteObjet'])) {
 
 $cartContent = "";
 $total = 0;
-if (isset($_SESSION['cart'])) {
+if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
     for ($i=0; $i < count($_SESSION['cart']); $i++) { 
 
         $idProd = $_SESSION['cart'][$i]['id'];
@@ -78,7 +78,10 @@ if (isset($_SESSION['cart'])) {
 
         $total +=$sousTotal;      
     }
+
     $_SESSION['total'] = $total;        
+} else {
+    $cartContent .= 'Votre Panier est vide';
 }
 
 ?>
@@ -116,7 +119,11 @@ if (isset($_SESSION['cart'])) {
                     <strong><h4>Total <b id="prixTotalPanier" style="color:#811512;"> <?php echo $total; ?> € </b></h4></strong>
                     <div><strong>Frais de livraison : GRATUIT ! </strong></div>
                 </td>
-                <td><a href="./recapitulatifCommande.php" class="btn btn-success btn-block">Payer <i class="glyphicon glyphicon-chevron-right"></i></a></td>
+                <td>
+                    <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
+                        echo '<a href="./recapitulatifCommande.php" class="btn btn-success btn-block">Payer <i class="glyphicon glyphicon-chevron-right">';
+                    } ?>
+                    </i></a></td>
             </tr>
         </tfoot>
     </table>
