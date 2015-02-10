@@ -27,6 +27,7 @@
 
 				echo '<h1>Resultats pour la recherche "'.$search.'"</h1>
 				<br><br>
+                                <div id="addArticle" class="alert alert-success" style="display: none;"> </div>
 				<div class="list-group">';
 
 				foreach ($result as $key => $value) {

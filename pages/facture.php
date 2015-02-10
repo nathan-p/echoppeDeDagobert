@@ -47,13 +47,13 @@ function getArticlesInFacture($idFacture) {
         $prix = $ligne['prix'];
         $nomImg = $ligne['urlImage'];
 
-        addLineArticle($nom, $description, $quantite, $prix, $nomImg);
+        addLineArticle($idObjet, $nom, $description, $quantite, $prix, $nomImg);
         $ligne = $donnee->fetch();
     }
     $donnee->closeCursor();
 }
 
-function addLineArticle($nom, $description, $quantite, $prix, $nomImg) {
+function addLineArticle($idObjet, $nom, $description, $quantite, $prix, $nomImg) {
     if($nomImg == null) {
         $urlImg = "http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png";
     } else {        
@@ -66,10 +66,10 @@ function addLineArticle($nom, $description, $quantite, $prix, $nomImg) {
     echo '<tr>
             <td class="col-sm-8 col-md-6">
             <div class="media">
-                <a class="thumbnail pull-left" href="./searchResult.php?search=' . $nom . '"> <img class="media-object" src="' . $urlImg . '" style="width: 72px; height: 72px;"> </a>
+                <a class="thumbnail pull-left" href="./detailObjet.php?idObjet=' . $idObjet . '"> <img class="media-object" src="' . $urlImg . '" style="width: 72px; height: 72px;"> </a>
                 <div class="media-body">
-                    <h4 class="media-heading"><a href="./searchResult.php?search=' . $nom . '">' . $nom . '</a></h4>
-                    <h5 class="media-heading"> by <a href="#"> Dagobert Industries </a></h5>
+                    <h4 class="media-heading"><a href="./detailObjet.php?idObjet=' . $idObjet . '">' . $nom . '</a></h4>
+                    <h5 class="media-heading"> by  Dagobert Industries </h5>
                 </div>
             </div>
             </td>

@@ -302,7 +302,9 @@ function updateSousTotal(lineNumber) {
           type: "POST",
           data: { id: idObjet }
         }).done(function(nbArticle) {
-            alert(nbArticle);
+            $("#addArticle").html("Article ajouté au panier.");
+            $("#addArticle").addClass("alert alert-success");
+            $("#addArticle").css("display", "block");
             $("#nbObjetsPanier").html("("+nbArticle+" articles)");
         });
     }
