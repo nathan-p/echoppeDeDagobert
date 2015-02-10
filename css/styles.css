@@ -337,6 +337,11 @@ a.list-group-item.active small {
     margin:20px auto 1px;    
 }
 
+.searchImg {
+	height: 200px;
+	width:300px;
+}
+
 /*
 *********************************************************
 ****************  PAGE COMPTE ***************************
@@ -359,3 +364,6 @@ a.list-group-item.active small {
 #adress-consult {
 	display : inline-block;
 }
+
+
+

@@ -8,14 +8,15 @@
         $connected = 1;
     }
 
-
+    
     if (isset($_SESSION['cart'])) {
         $nbObjets = 0;
         for($i=0 ; $i < count($_SESSION['cart']) ; $i++) {
             $nbObjets += $_SESSION['cart'][$i]['quantite'];
         }
         $cart = "(" . $nbObjets . " articles)";
-    } else {
+    } 
+    else {
         $cart = "(vide)";
     }
 ?>

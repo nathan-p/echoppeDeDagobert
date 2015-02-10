@@ -212,7 +212,7 @@ function updateCartTotalPrice() {
         totalPrice += parseFloat(cartElements[i].innerHTML);
     }
     totalPrice = totalPrice.toFixed(2);
-    document.getElementById('prixTotalPanier').innerHTML = totalPrice;
+    document.getElementById('prixTotalPanier').innerHTML = totalPrice+" €";
 }
 
 function updateCartNumber() {
@@ -291,3 +291,18 @@ function updateSousTotal(lineNumber) {
     updateCartTotalPrice();
     updateCartNumber();
 }
+
+
+/************************************************/
+/******** FUNCTION SEARCH ********/
+/************************************************/
+    function addToCart(idObjet) {
+        $.ajax({
+          url: "../utils/addToCart.php",
+          type: "POST",
+          data: { id: idObjet }
+        }).done(function(nbArticle) {
+            alert(nbArticle);
+            $("#nbObjetsPanier").html("("+nbArticle+" articles)");
+        });
+    }
