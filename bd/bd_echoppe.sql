@@ -147,8 +147,8 @@ INSERT INTO `objet` (`idObjet`, `nom`, `description`, `stock`, `prix`, `promotio
 (21, 'Armure de piquier de la renaissance', 'Les armures de cette époque sont caractérisées par un plastron busqué, mais aussi d''imposantes tassettes pour couvrir le haut des cuisses', 3, 1800, 5, 'armure_de_piquier.jpg', 2, 5),
 (22, 'Heaume', 'Heaume de facture italienne', 5, 300, NULL, 'bassinet_italien.jpg', 2, 5),
 (23, 'Costume de gueux', 'Set complet pour se déguiser en gueux', 20, 20, NULL, '01510-bl09-wolltunika-lodin-rot-1.jpg', 1, 2),
-(667, 'Musique du diable', 'pas besoin d''explications', 1, 5, 100, 'bieber.jpg', 2, 6),
-(666, 'Livre du diable', 'pas besoin d''explications', 1, 1, NULL, 'twilight.jpg', 2, 6),
+(667, 'Musique du diable', 'pas besoin d''explications', 666, 5, 100, 'bieber.jpg', 2, 6),
+(666, 'Livre du diable', 'pas besoin d''explications', 666, 1, NULL, 'twilight.jpg', 2, 6),
 (668, 'Tetine de torture', 'Pour calmer bébé', 100, 4, NULL, 'tetine.png', 2, 6),
 (5, 'Costume de gueux odorant', 'Le costume de gueux avec l''odeur en plus !', 10, 25, NULL, '01510-bl09-wolltunika-lodin-rot-1.jpg', 1, 2),
 (24, 'Epée d''archer', 'Epée à une main relativement courte, peu encombrante pour un archer. Lame en acier', 5, 200, 5, 'epee_d_archer.jpg', 2, 4),
@@ -159,14 +159,16 @@ INSERT INTO `objet` (`idObjet`, `nom`, `description`, `stock`, `prix`, `promotio
 (6, 'Robe', 'Robe de princesse de Super Royaume', 2, 99, NULL, 'robe super royaume.png', 1, 1),
 (7, 'Harpe', 'Harpe celtique de troubadour fabriquée à l''ancienne', 5, 400, NULL, 'harpe.jpg', 3, NULL),
 (27, 'Oud', 'Instrument de musique Egyptien du moyen age', 5, 400, 5, 'oud.jpg', 3, NULL),
-(8, 'Anneau', 'Anneau avec des diamants et des rubis', 2, 500, NULL, 15, 4, NULL),
-(9, 'Table ronde', 'La table ronde de Camelot', 12, 200, NULL, NULL, 5, 7),
+(8, 'Anneau', 'Anneau avec des diamants et des rubis', 2, 500, NULL,'bague.jpg', 4, NULL),
+(9, 'Table ronde', 'La table ronde de Camelot', 12, 200, NULL, 'table_ronde.jpg', 5, 7),
 (10, 'Moitié de Robe', 'Moitié de robe', 1, 50, NULL, 'mittelalter-blusen.jpg', 1, 1),
 (11, 'Bustier tepu', 'Parce que je le veux bien', 1, 250, 50, 'lplm1409_ledermieder_antik_1.jpg', 1, 1),
 (31, 'Tente Viking', 'Une tente de style Viking', 5, 70, 10, 'tente.jpg', 5, 8),
 (32, 'Tente de chevalier', 'Tente de tournoi médievale, pour un chevalier. Disponible en bleu, vert, rouge et or', 5, 200, 5, 'tente2.jpg', 5, 8),
 (33, 'Grande tente de chevalier', 'Tente de médievale, pour un riche seigneur. Disponible en bleu, vert, rouge et or', 5, 400, NULL, 'tente3.jpg', 5, 8),
-(12, 'Tee shirt Dagobert', 'OMG je le veux', 1, 130, NULL, '22026w.jpg', 1, 1);
+(12, 'Tee shirt Dagobert', 'OMG je le veux', 1, 130, NULL, '22026w.jpg', 1, 1),
+(4000, 'Bottines de gueux', 'Bottines sales en cuir de chèvre', 14, 70, NULL, 'comp__mg_1421.jpg', 3, 1);
+
 
 -- --------------------------------------------------------
 
@@ -217,8 +219,8 @@ CREATE TABLE IF NOT EXISTS `souscategorie` (
 --
 
 INSERT INTO `souscategorie` (`idCategorie`, `nom`, `SousCategorie_idCategorie`) VALUES
-(1, 'Pour femme', 1),
-(2, 'Pour homme', 1),
+(1, 'Costume pour femme', 1),
+(2, 'Costume pour homme', 1),
 (3, 'Chaussures', 1),
 (4, 'Armes', 2),
 (5, 'Armures', 2),
