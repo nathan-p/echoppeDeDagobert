@@ -167,7 +167,7 @@ INSERT INTO `objet` (`idObjet`, `nom`, `description`, `stock`, `prix`, `promotio
 (32, 'Tente de chevalier', 'Tente de tournoi médievale, pour un chevalier. Disponible en bleu, vert, rouge et or', 5, 200, 5, 'tente2.jpg', 5, 8),
 (33, 'Grande tente de chevalier', 'Tente de médievale, pour un riche seigneur. Disponible en bleu, vert, rouge et or', 5, 400, NULL, 'tente3.jpg', 5, 8),
 (12, 'Tee shirt Dagobert', 'OMG je le veux', 1, 130, NULL, '22026w.jpg', 1, 1),
-(4000, 'Bottines de gueux', 'Bottines sales en cuir de chèvre', 14, 100, 10, 'comp__mg_1421.jpg', 3, 1),
+(4000, 'Bottines de gueux', 'Bottines sales en cuir de chèvre', 14, 100, 10, 'comp__mg_1421.jpg', 1, 3),
 (4001, 'Chaise haute', 'Super chaise', 14, 50, 10, 'bm1901010700-steckstuhl.jpg', 5, 7);
 
 

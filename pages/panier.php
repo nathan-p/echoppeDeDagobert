@@ -121,7 +121,7 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
                 </td>
                 <td>
                     <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
-                        echo '<a href="./recapitulatifCommande.php" class="btn btn-success btn-block">Payer <i class="glyphicon glyphicon-chevron-right">';
+                        echo '<a id="btnPayer" href="./recapitulatifCommande.php" class="btn btn-success btn-block">Payer <i class="glyphicon glyphicon-chevron-right">';
                     } ?>
                     </i></a></td>
             </tr>

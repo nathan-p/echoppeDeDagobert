@@ -202,6 +202,15 @@ function deleteLineFromCart(lineNumber) {
     updateCartElementId();
     updateCartDeleteOnClick();
     updateQuantityOnClick();
+    removeBtn();
+}
+
+function removeBtn() {
+    var cartElements = document.getElementsByName('ligneDuPanier');
+    if (cartElements.length <= 0) {
+        var elem = document.getElementById('btnPayer');
+        elem.parentNode.removeChild(elem);
+    }
 }
 
 function updateCartTotalPrice() {
